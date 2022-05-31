@@ -1,0 +1,34 @@
+meta_info:
+    appid: app.authpass
+    id: 1075141
+    name: AuthPass.app
+    upstream: 
+        from: github
+        info:
+            author: authpass
+            project: authpass
+            suffix: tar.gz
+            prefix: ""
+    systemStr:
+        - 社区版
+    arch: amd64
+    callHooks: false
+
+build_info:
+    binary:
+        type: binay
+        content:
+            path: /
+            fix:
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix: 
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: AuthPass\nFree and Open Source password manager for Android, iOS, MacOS, Linux and Windows. Compatible with KeePass.

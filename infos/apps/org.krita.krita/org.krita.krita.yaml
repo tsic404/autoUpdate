@@ -1,0 +1,26 @@
+meta_info:
+    appid: org.krita.krita
+    id: 1000495
+    name: Krita
+    upstream:
+        from: krita
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /usr
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: "Krita\nKrita is a professional FREE and open source painting program. It is made by artists that want to see affordable art tools for everyone."

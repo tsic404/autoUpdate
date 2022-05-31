@@ -1,0 +1,28 @@
+meta_info:
+    appid: com.doublecommander
+    id: 1016301
+    name: Double Commander
+    arch: amd64
+    upstream:
+        from: sourceforge
+        info:
+            project: doublecmd
+            d_filename: doublecmd-(.*).gtk2.x86_64.tar.xz
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Double Commander is a cross platform open source file manager\nDouble Commander is a cross platform open source file manager with two panels side by side, developed by alexx2000. It is inspired by Total Commander and features some new ideas.

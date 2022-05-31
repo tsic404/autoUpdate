@@ -1,0 +1,31 @@
+meta_info:
+    appid: cn.google.chrome
+    id: 1003237
+    name: Chrome-谷歌浏览器
+    upstream: 
+        from: chrome
+    systemStr:
+        - 社区版
+        - 家庭版
+        - 教育版
+    arch: amd64
+    callHooks: false
+
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /opt/google/chrome/
+            fix:
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                fix: 
+                    - icons_fix
+deepin_info:
+
+debian_info:

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Zotero
+Exec=/opt/apps/org.zotero.zotero-standalone/files/zotero -url %U
+Icon=zotero
+Type=Application
+Terminal=false
+Categories=Office;
+MimeType=text/plain

@@ -1,0 +1,25 @@
+meta_info:
+    appid: org.zotero.zotero-standalone
+    id: 1009095
+    name: Zotero
+    upstream:
+        from: zotero
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content: 
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Your personal research assistant\nZotero is a free, easy-to-use tool to help you\ncollect, organize, cite, and share research.

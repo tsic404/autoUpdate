@@ -1,0 +1,29 @@
+meta_info:
+    appid: net.supertuxkart
+    id: 1007776
+    name: Super Tux Kart
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: supertuxkart
+            project: stk-code
+            suffix: linux-64bit.tar.xz
+            prefix: ""
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: SuperTuxKart is a free kart racing game. It focuses on fun and not on realistic kart physics. Instructions can be found on the in-game help page.

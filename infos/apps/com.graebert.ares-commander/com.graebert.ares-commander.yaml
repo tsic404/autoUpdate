@@ -1,0 +1,30 @@
+meta_info:
+    appid: com.graebert.ares-commander
+    id: 1069258
+    name: ARES Commander
+    upstream:
+        from: graebert
+    arch: amd64
+
+build_info:
+    binary:
+        type: deb
+        content:
+            fix:
+                - content_fix
+                - udev_fix
+                - help_fix
+                - data_fix
+        entries:
+            applications:
+                fix:
+                    - desktops_fix
+            icons:
+                fix:
+                    - icons_fix
+            mime:
+                fix:
+                    - mime_fix
+deepin_info:
+
+debian_info:

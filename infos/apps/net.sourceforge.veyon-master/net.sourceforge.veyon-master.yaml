@@ -1,0 +1,34 @@
+meta_info:
+    appid: net.sourceforge.veyon-master
+    id: 1001899
+    name: Veyon Master
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: veyon
+            project: veyon
+            suffix: debian-buster_amd64.deb
+            prefix: ""
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /usr/
+            fix:
+                - ldpath_fix
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+            polkit:
+                fix:
+                    - polkit_fix
+deepin_info:
+
+debian_info:

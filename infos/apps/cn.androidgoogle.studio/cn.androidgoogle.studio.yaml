@@ -1,0 +1,32 @@
+meta_info:
+    appid: cn.androidgoogle.studio
+    id: 1007798
+    name: Android Studio
+    upstream:
+        from: androidstudio
+    systemStr:
+        - 社区版
+    arch: amd64
+    callHooks: false
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+            fix:
+        entries:
+            applications:
+                path:
+                fix:
+                    - desktop_fix
+
+            icons:
+                path:
+                fix:
+                    - icon_fix
+
+debian_info:
+    debian_patched:
+        Description: Android Studio\nAndroid Studio provides the fastest tools for building apps on every type of Android device.
+deepin_info:

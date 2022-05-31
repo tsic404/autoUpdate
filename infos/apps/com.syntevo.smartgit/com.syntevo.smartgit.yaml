@@ -1,0 +1,26 @@
+meta_info:
+    appid: com.syntevo.smartgit
+    id: 1001940
+    name: SmartGit
+    arch: amd64
+    upstream:
+        from: smartgit
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Get your commit done.\nSmartGit is the most popular Git GUI client at slant.co.\n100,000+ developers around the world trust in SmartGit.\nSmartGit supports GitHub, Bitbucket, GitLab and Azure DevOps.

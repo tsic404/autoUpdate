@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=IntelliJ IDEA Edu
+Icon=com.jetbrains.intellij-idea-edu
+Exec=/opt/apps/com.jetbrains.intellij-idea-edu/files/bin/idea.sh %u
+Categories=Development;IDE;
+StartupWMClass=jetbrains-idea-edu
+Comment=An educational IDE for coding.
+StartupNotify=true
+Terminal=false

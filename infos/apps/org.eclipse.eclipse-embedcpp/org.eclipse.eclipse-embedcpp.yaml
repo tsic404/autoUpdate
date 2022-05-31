@@ -1,0 +1,26 @@
+meta_info:
+    appid: org.eclipse.eclipse-embedcpp
+    id: 1067709
+    name: Eclipse IDE for Embedded C/C++ Developers
+    arch: amd64
+    upstream:
+        from: eclipse
+        info:
+            code: embedcpp
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Eclipse IDE for Embedded C/C++ Developers.\nAn IDE for Embedded C/C++ developers. It includes managed cross build plug-ins (Arm and RISC-V) and debug plug-ins (SEGGER J-Link, OpenOCD, pyocd, and QEMU), plus a number of templates to create ready to run blinky projects.

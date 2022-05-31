@@ -1,0 +1,30 @@
+meta_info:
+    appid: com.bitwarden
+    id: 1026218
+    name: bitwarden
+    upstream:
+        from: github
+        info:
+            author: bitwarden
+            project: desktop
+            suffix: AppImage
+            prefix: ""
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                path:
+                    - /usr/share/icons
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: The Most Trusted Open Source Password Manager for Business\nBitwarden offers the easiest and safest way for teams and individuals to store and share sensitive data from any device.

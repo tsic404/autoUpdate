@@ -1,0 +1,35 @@
+meta_info:
+    appid: github.nextcloud.nextcloud-desktop
+    id: 1001126
+    name: Nextcloud
+    upstream:
+        from: github
+        info:
+            author: nextcloud
+            project: desktop
+            suffix: x86_64.AppImage
+            prefix: ""
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+            mime:
+                path:
+                    - /usr/share/mime/
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Nextcloud Desktop Client\nThe computer Nextcloud Desktop Client is a tool to synchronize files from Nextcloud Server with your computer.

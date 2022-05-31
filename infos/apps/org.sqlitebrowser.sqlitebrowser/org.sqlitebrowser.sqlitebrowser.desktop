@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=DB Browser for SQLite
+Comment=DB Browser for SQLite is a light GUI editor for SQLite databases
+Comment[de]=DB Browser for SQLite ist ein GUI-Editor f\u00fcr SQLite-Datenbanken
+Comment[fr]=Un \u00e9diteur graphique l\u00e9ger pour les bases de donn\u00e9es SQLite
+Comment[es]=\u00abDB Browser for SQLite\u00bb es un editor gr\u00e1fico de bases de datos SQLite
+Exec=/opt/apps/org.sqlitebrowser/files/AppRun %f
+Icon=sqlitebrowser
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Categories=Development;
+MimeType=application/vnd.db4s-project+xml;application/sqlitebrowser;application/x-sqlitebrowser;application/vnd.sqlite3;application/geopackage+sqlite3;application/x-sqlite2;application/x-sqlite3;

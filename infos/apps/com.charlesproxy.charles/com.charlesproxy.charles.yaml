@@ -1,0 +1,35 @@
+meta_info:
+    appid: com.charlesproxy.charles
+    id: 1001078
+    name: Charles
+    upstream: 
+        from: charles
+    systemStr:
+        - 社区版
+        - 专业版
+        - 家庭版
+        - 教育版
+    arch: amd64
+    callHooks: false
+
+build_info:
+    binary:
+        type: binay
+        content:
+            path: /
+            fix:
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix: 
+                    - icons_fix
+            mime:
+                fix:
+                    - mime_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Capture and get the problem of network.\n Charles is a local HTTP proxy and capturing tool.\n It supports SSL proxy, flow control, AJAX, AMF debug, resend network request and modify network request parameters, etc.\n It can check the compatible for HTML, CSS and RSS contents.

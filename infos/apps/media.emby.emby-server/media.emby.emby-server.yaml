@@ -1,0 +1,34 @@
+meta_info:
+    appid: media.emby.emby-server
+    id: 1007707
+    name: Emby
+    upstream:
+        from: github
+        info:
+            author: MediaBrowser
+            project: Emby.Releases
+            suffix: amd64.deb
+            prefix: emby-server-deb
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /opt/emby-server
+            fix:
+                - usr_fix
+                - etc_fix
+                - emby_fix
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Emby Server is a personal media server with apps on just about every device.

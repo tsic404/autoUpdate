@@ -1,0 +1,57 @@
+# 打包完成后的目录
+build_path: /home/tsic/package/finished/
+
+# 打包时的所在的目录
+workspace: /home/tsic/package/workspace/
+
+# 打包解压文件的路径
+unpack_path: /home/tsic/package/unpack/
+
+# 日志路径
+log: /tmp/auto_log
+
+ver_db: /home/tsic/auto3/ver_db.sqlite
+
+download_path: /home/tsic/package/downloads/
+
+# 程序配置文件路径
+info: /home/tsic/auto3/infos
+
+extra: do_extra
+
+# 每次检查的时间
+waitTime: 2
+failed_count: 10
+
+faketime: "2021-10-01 00:00:00"
+
+# 对于国外程序，需要设置代理
+net:
+    proxy_ip: "10.20.52.80"
+    proxy_port: "7890"
+    default_use: false
+
+# 打包完成调用的hooks
+finished_hooks:
+    call: True
+    path: /home/tsic/auto3/hooks
+    hooks:
+        - update_db
+        - upload
+
+app_default:
+    default_permissioins:
+        autostart: False
+        notification: False
+        trayicon: False
+        clipboard: False
+        account: False
+        bluetooth: False
+        camera: False
+        audio_record: False
+        installed_apps: False
+    default_debian:
+        Priority: optional
+        Section: applications
+        Maintainer: Liu Heng <liuhenga@uniontech.com>
+    

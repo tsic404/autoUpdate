@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Popcorn-Time
+Exec=/opt/apps/github.popcorn-official.popcorn-time/files/Popcorn-Time %U
+Terminal=false
+Type=Application
+Icon=popcorn-time
+StartupWMClass=Popcorn-Time
+StartupNotify=false
+GenericName=Video Player
+Comment=Watch Movies and TV Shows instantly.
+Categories=Player;
+MimeType=application/x-bittorrent;x-scheme-handler/magnet;

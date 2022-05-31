@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=/opt/apps/com.mozilla.firefox-zh/files/firefox
+Icon=firefox-zh
+Name=firefox-zh
+Name[zh_CN]=火狐浏览器
+Terminal=false
+Type=Application

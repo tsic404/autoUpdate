@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=DataSpell
+Icon=com.jetbrains.dataspell
+Exec=/opt/apps/com.jetbrains.dataspell/files/bin/dataspell.sh %u
+Categories=Development;IDE;
+StartupWMClass=jetbrains-spell
+Comment=A cross-platform IDE for C and C++.
+StartupNotify=true
+Terminal=false

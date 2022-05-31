@@ -1,0 +1,25 @@
+meta_info:
+    appid: com.vivaldi.vivaldi
+    id: 1000458
+    name: Vivaldi
+    arch: amd64
+    upstream:
+        from: vivaldi
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /opt/vivaldi/
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                fix:
+                    - icons_fix
+
+deepin_info:
+
+debian_info:

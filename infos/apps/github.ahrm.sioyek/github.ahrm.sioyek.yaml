@@ -1,0 +1,31 @@
+meta_info:
+    appid: github.ahrm.sioyek
+    id: 1016300
+    name: Sioyek
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: ahrm
+            project: sioyek
+            suffix: linux-gcc8.zip
+            prefix: ""
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /usr
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Sioyek\nSioyek is a PDF viewer designed for reading research papers and technical books.

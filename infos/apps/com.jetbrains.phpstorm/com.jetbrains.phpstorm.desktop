@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=PhpStorm
+Icon=com.jetbrains.phpstorm
+Exec=/opt/apps/com.jetbrains.phpstorm/files/bin/phpstorm.sh %u
+Categories=Development;IDE;
+StartupWMClass=jetbrains-rider
+Comment=A smart IDE for PHP and Web.
+StartupNotify=true
+Terminal=false

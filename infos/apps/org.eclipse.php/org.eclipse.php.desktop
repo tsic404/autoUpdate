@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Eclipse IDE for PHP Developers
+Icon=eclipse-php
+Exec=/opt/apps/org.eclipse.php/files/eclipse %u
+Categories=Development;IDE;
+Comment=Eclipse IDE for PHP Developers
+StartupWMClass=Eclipse
+StartupNotify=true
+Terminal=false

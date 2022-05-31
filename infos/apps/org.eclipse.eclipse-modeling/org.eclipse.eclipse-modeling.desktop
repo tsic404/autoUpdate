@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Eclipse IDE for Java Developers
+Icon=eclipse-modeling
+Exec=/opt/apps/org.eclipse.eclipse-modeling/files/eclipse %u
+Categories=Development;IDE;
+Comment=Eclipse IDE for Java Developers
+StartupWMClass=Eclipse
+StartupNotify=true
+Terminal=false

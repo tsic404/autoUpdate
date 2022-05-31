@@ -1,0 +1,26 @@
+meta_info:
+    appid: com.jetbrains.datagrip
+    id: 1002022
+    name: DataGrip
+    arch: amd64
+    upstream:
+        from: jetbrains
+        info:
+            code: DG
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: DataGrip\nMany databases, one tool.

@@ -1,0 +1,26 @@
+meta_info:
+    appid: com.jetbrains.clion
+    id: 1000475
+    name: CLion
+    arch: amd64
+    upstream:
+        from: jetbrains
+        info:
+            code: CL
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: CLion\nA cross-platform IDE for C and C++.

@@ -1,0 +1,31 @@
+meta_info:
+    appid: github.fndroid.cfw
+    id: 1026224
+    name: Clash for Windows
+    upstream:
+        from: github
+        info:
+            author: Fndroid
+            project: clash_for_windows_pkg
+            suffix: x64-linux.tar.gz
+            prefix: ""
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Clash for Windows\nA Windows/macOS/Linux GUI based on Clash and Electron.
+

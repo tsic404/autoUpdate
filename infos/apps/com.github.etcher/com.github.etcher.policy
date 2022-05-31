@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+"http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+<policyconfig>
+    <icon_name>balena-etcher-electron</icon_name>
+	<action id="com.github.etcher">
+		<description>Flash Disk Need Authentication</description>
+		<message>Authentication is required to read disk information</message>
+		<defaults>
+			<allow_any>auth_admin</allow_any>
+			<allow_inactive>auth_admin</allow_inactive>
+			<allow_active>auth_admin</allow_active>
+		</defaults>
+		
+		<description xml:lang="zh_CN">Flash Disk Need Authentication</description>
+		<message xml:lang="zh_CN">烧录磁盘需要认证</message>
+
+        <annotate key="org.freedesktop.policykit.exec.path">/opt/apps/com.github.etcher/files/balena-etcher-electron</annotate>
+        <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>       
+	</action>
+</policyconfig>

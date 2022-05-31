@@ -1,0 +1,27 @@
+meta_info:
+    appid: org.mozilla.firefox-nal
+    id: 1002699
+    name: 火狐浏览器国际版
+    upstream:
+        from: firefox
+        info:
+            code: nal
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Firefox Browser\nGet the browser that protects what\u2019s important.

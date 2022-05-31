@@ -1,0 +1,27 @@
+meta_info:
+    appid: org.eclipse.eclipse-cc
+    id: 1006526
+    name: Eclipse IDE for C/C++ Developers
+    arch: amd64
+    upstream:
+        from: eclipse
+        info:
+            code: cpp
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Eclipse IDE for C/C++ Developers\nAn IDE for C/C++ developers.

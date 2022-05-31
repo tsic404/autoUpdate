@@ -1,0 +1,33 @@
+meta_info:
+  appid: com.visiualstudio.code
+  id: 1000483
+  name: Visual Studio Code
+  upstream:
+    from: vscode
+  arch: amd64
+  callHooks: False
+
+build_info:
+  binary:
+    type: deb
+    content:
+      path: /usr/share/
+      fix:
+        - code_fix
+    entries:
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        fix:
+         - icons_fix
+
+      mime:
+        path:
+          - /usr/share/mime
+
+deepin_info:
+
+debian_info:

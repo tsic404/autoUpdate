@@ -1,0 +1,28 @@
+meta_info:
+    appid: org.eclipse.java-ee
+    id: 1000440
+    name: Eclipse IDE for Java EE Develop
+    arch: amd64
+    upstream:
+        from: eclipse
+        info:
+            code: jee
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Eclipse IDE for Enterprise Java and Web Developers\nTools for developers working with Java and Web applications, including a Java IDE, tools for JavaScript, TypeScript, JavaServer Pages and Faces, Yaml, Markdown, Web Services, JPA and Data Tools, Maven and Gradle, Git, and more.

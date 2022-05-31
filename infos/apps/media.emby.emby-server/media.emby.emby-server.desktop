@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Emby Server
+Comment=a personal media server 
+Exec=xdg-open http://localhost:8096
+Terminal=false
+Type=Application
+Icon=emby-server
+Categories=Network;Player;

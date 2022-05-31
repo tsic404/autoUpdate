@@ -1,0 +1,29 @@
+meta_info:
+    appid: com.jetbrains.dataspell
+    id: 1016467
+    name: DataSpell
+    upstream:
+        from: jetbrains
+        info:
+            code: DS
+    systemStr:
+        - 社区版
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: The IDE for Professional Data Scientists

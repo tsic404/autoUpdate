@@ -1,0 +1,31 @@
+meta_info:
+    appid: com.onlyoffice.onlyoffice-desktopeditors
+    id: 1003015
+    name: ONLYOFFICE Desktop Editors
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: ONLYOFFICE
+            project: appimage-desktopeditors
+            suffix: .AppImage
+            prefix: ""
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /usr
+        entries:
+            applications:
+                path: 
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: ONLYOFFICE\nRun your private office with the ONLYOFFICE.Secure office and productivity apps.

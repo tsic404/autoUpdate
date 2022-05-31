@@ -1,0 +1,58 @@
+{
+    "meta":{
+        "source":"skype",
+        "build":"deb",
+        "skype":"",
+        "content":"/usr/share/skypeforlinux",
+        "appid":"com.skype.www",
+        "pkg_ver":"8.83.0.408",
+        "url":"https://repo.skype.com/deb/pool/main/s/skypeforlinux/skypeforlinux_8.83.0.408_amd64.deb",
+        "extra":[
+            "exec_fix"
+        ],
+        "innormal":false
+    },
+    "debian":{
+        "Package":"com.skype.www",
+        "Version":"8.83.0.408",
+        "Architecture":"amd64",
+        "Maintainer":"Skype Technologies S.A. <info@skype.net>",
+        "Installed-Size":"375131",
+        "Depends":"apt-transport-https, gnome-keyring, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatomic1, libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.17), libcairo2 (>= 1.6.0), libdbus-1-3 (>= 1.6.18), libdrm2 (>= 2.4.38), libexpat1 (>= 2.0.1), libfontconfig1 (>= 2.11.0), libgbm1 (>= 17.1.0~rc2), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.39.4), libgtk-3-0 (>= 3.9.10), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.22), libpango-1.0-0 (>= 1.14.0), libsecret-1-0 (>= 0.18), libstdc++6 (>= 4.8.1), libx11-6 (>= 2:1.4.99.1), libxcb1 (>= 1.9.2), libxcomposite1 (>= 1:0.3-1), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxkbcommon0 (>= 0.5.0), libxrandr2, libxshmfence1",
+        "Section":"non-free/net",
+        "Priority":"extra",
+        "Homepage":"https://www.skype.com",
+        "Description":"Skype keeps the world talking, for free.\nSkype keeps you together. Call, message and share with others.\n* It's free to download and join.\n* Call, instant message and send photos and documents to anyone else on Skype.\n* Easily text message anywhere in the world.\n* Get your friends together on a group call.\nAnd that's just the start...",
+        "Conflicts":"skypeforlinux",
+        "Replaces":"skypeforlinux"
+    },
+    "info":{
+        "appid":"com.skype.www",
+        "name":"skype",
+        "version":"8.83.0.408",
+        "arch":[
+            "amd64"
+        ],
+        "permissions":{
+            "autostart":false,
+            "notification":false,
+            "trayicon":false,
+            "clipboard":false,
+            "account":false,
+            "bluetooth":false,
+            "camera":false,
+            "audio_record":false,
+            "installed_apps":false
+        },
+        "support-plugins":[],
+        "plugins":[]
+    },
+    "entries":{
+        "applications":[
+            "/usr/share/applications/"
+        ],
+        "icons":[
+            "/usr/share/icons/"
+        ]
+    }
+}

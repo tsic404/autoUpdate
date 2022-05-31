@@ -1,0 +1,28 @@
+meta_info:
+    appid: com.jetbrains.pycharm
+    id: 1002328
+    name: PyCharm Professional
+    upstream:
+        from: jetbrains
+        info:
+            code: PCP
+    arch: amd64
+    callHooks: false
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: PyCharm\nThe Python IDE for Professional Developers.

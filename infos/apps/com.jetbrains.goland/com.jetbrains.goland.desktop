@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=GoLand
+Icon=com.jetbrains.goland
+Exec=/opt/apps/com.jetbrains.goland/files/bin/goland.sh %u
+Categories=Development;IDE;
+StartupWMClass=jetbrains-goland
+Comment=An IDE for Go and Web
+StartupNotify=true
+Terminal=false

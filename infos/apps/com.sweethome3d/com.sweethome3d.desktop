@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=SweetHome3D
+Exec=/opt/apps/com.sweethome3d/files/SweetHome3D
+Terminal=false
+Type=Application
+Icon=SweetHome3D
+Categories=Development;

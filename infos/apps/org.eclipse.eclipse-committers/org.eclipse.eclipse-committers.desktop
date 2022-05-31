@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Eclipse IDE for Eclipse Committers
+Icon=eclipse-committers
+Exec=/opt/apps/org.eclipse.eclipse-committers/files/eclipse %u
+Categories=Development;IDE;
+Comment=Eclipse IDE for Eclipse Committers
+StartupWMClass=Eclipse
+StartupNotify=true
+Terminal=false

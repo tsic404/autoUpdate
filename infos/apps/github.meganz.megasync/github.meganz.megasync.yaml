@@ -1,0 +1,31 @@
+meta_info:
+    appid: github.meganz.megasync
+    id: 
+    name: MEGA Desktop App
+    arch: amd64
+    upstream:
+        from: mega
+        info:
+            author: meganz
+            project: MEGAsync
+            suffix: zip
+            prefix: ""
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /usr/
+            fix:
+                - etc_fix
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+deepin_info:
+
+debian_info:

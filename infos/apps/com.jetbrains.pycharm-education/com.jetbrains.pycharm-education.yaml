@@ -1,0 +1,28 @@
+meta_info:
+    appid: com.jetbrains.pycharm-education
+    id: 1017687
+    name: PyCharm Edu
+    upstream:
+        from: jetbrains
+        info:
+            code: PCE
+    arch: amd64
+    callHooks: false
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: PyCharm\nAn educational IDE for Python

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=RubyMine
+Icon=com.jetbrains.rubymine
+Exec=/opt/apps/com.jetbrains.rubymine/files/bin/rubymine.sh %u
+Categories=Development;IDE;
+StartupWMClass=jetbrains-rubymine
+Comment=A Ruby and Rails IDE.
+StartupNotify=true
+Terminal=false

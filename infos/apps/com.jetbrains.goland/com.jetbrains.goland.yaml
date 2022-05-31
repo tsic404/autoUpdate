@@ -1,0 +1,29 @@
+meta_info:
+    appid: com.jetbrains.goland
+    id: 1003791
+    name: GoLand
+    upstream:
+        from: jetbrains
+        info:
+            code: GO
+    systemStr:
+        - 社区版
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Go Productive\nGoLand is a cross-platform IDE built specially for Go developers

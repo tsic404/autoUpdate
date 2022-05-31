@@ -1,0 +1,35 @@
+meta_info:
+    appid: com.leanote.leanote
+    id: 1000653
+    name: 蚂蚁笔记
+    upstream: 
+        from: github
+        info:
+            author: leanote
+            project: desktop-app
+            suffix: ""
+            prefix: leanote-desktop-linux-x64
+    systemStr:
+        - 社区版
+    arch: amd64
+    callHooks: false
+
+build_info:
+    binary:
+        type: binay
+        content:
+            path: /
+            fix:
+                - permission_fix
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix: 
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Leanote, not just a notepad!\nUse Electron(atom-shell) to create leanote desktop app.

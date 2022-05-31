@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Postman
+Exec=/opt/apps/com.postman.postman/files/Postman %U
+Terminal=false
+Type=Application
+Icon=postman
+Categories=Development;

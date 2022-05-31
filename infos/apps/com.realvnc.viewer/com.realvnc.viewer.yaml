@@ -1,0 +1,29 @@
+meta_info:
+    appid: com.realvnc.viewer
+    id: 1000557
+    name: VNC Viewer
+    arch: amd64
+    upstream:
+        from: realvnc
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /usr
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+                fix:
+                    - icons_fix
+            mime:
+                path:
+                    - /usr/share/mime/
+deepin_info:
+
+debian_info:

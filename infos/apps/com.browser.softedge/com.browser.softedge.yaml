@@ -1,0 +1,24 @@
+meta_info:
+    appid: com.browser.softedge
+    id: 1011152
+    name: Microsoft Edge Beta
+    upstream:
+        from: edge
+    arch: amd64
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /opt/microsoft/msedge-beta
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:

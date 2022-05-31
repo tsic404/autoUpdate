@@ -1,0 +1,28 @@
+meta_info:
+    appid: com.jetbrains.rubymine
+    id: 1009145
+    name: RubyMine
+    upstream:
+        from: jetbrains
+        info:
+            code: RM
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: RubyMine\nThe Most Intelligent Ruby and Rails IDE.

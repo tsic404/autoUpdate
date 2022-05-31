@@ -1,0 +1,39 @@
+meta_info:
+    appid: cn.teamviewer.teamviewer
+    id: 1008387
+    name: TeamViewer
+    upstream:
+        from: teamviewer
+    systemStr:
+        - 社区版
+    arch: amd64
+    callHooks: false
+
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /opt/teamviewer/
+            fix:
+                - debian_script_fix
+                - add_remove
+                - log&config_fix
+        entries:
+            applications:
+                fix:
+                    - desktops_fix
+            icons:
+                fix:
+                    - icons_fix
+            service:
+                fix:
+                    - services_fix
+            polkix-1:
+                fix:
+                    - polkit_fix
+
+deepin_info:
+    permissions_info:
+         trayicon: true
+
+debian_info:

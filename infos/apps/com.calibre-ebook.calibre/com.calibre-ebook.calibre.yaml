@@ -1,0 +1,26 @@
+meta_info:
+    appid: com.calibre-ebook.calibre
+    id: 1000360
+    name: Calibre
+    arch: amd64
+    upstream:
+        from: calibre
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Conflicts: calibre,calibre-bin
+        Replaces: calibre,calibre-bin
+        Description: powerful and easy to use e-book manager\n Calibre is a complete e-library solution. It includes library management,\nformat conversion, news feeds to e-book conversion, e-book viewer and editor,\nand e-book reader sync features.

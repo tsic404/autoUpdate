@@ -1,0 +1,37 @@
+meta_info:
+    appid: github.vscodium.vscodium
+    id: 1070901
+    name: VSCodium
+    upstream:
+        from: github
+        info:
+            author: VSCodium
+            project: vscodium
+            suffix: amd64.deb
+            prefix: ""
+    arch: amd64
+
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /usr/share/
+            fix:
+                - code_fix
+                - auto_complete
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                fix:
+                    - icons_fix
+            mime:
+                path:
+                    - /usr/share/mime/
+
+deepin_info:
+
+debian_info:

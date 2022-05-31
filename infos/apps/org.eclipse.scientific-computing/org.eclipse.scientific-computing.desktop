@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Eclipse IDE for Scientific Computing
+Icon=eclipse-parallel
+Exec=/opt/apps/org.eclipse.scientific-computing/files/eclipse %u
+Categories=Development;IDE;
+Comment=Eclipse IDE for Scientific Computing
+StartupWMClass=Eclipse
+StartupNotify=true
+Terminal=false

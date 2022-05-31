@@ -1,0 +1,25 @@
+meta_info:
+    appid: cn.wiz.wiznote
+    id: 1000432
+    name: 为知笔记
+    upstream:
+        from: wiznote
+    arch: amd64
+
+build_info:
+    binary:
+        type: binaty
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                path:
+                    - /usr/share/icons
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: "\u4e3a\u77e5\u7b14\u8bb0\u91cd\u6784\u7248\n\u5168\u65b0\u8bbe\u8ba1\uff0c\u66f4\u52a0\u7f8e\u89c2\u548c\u6d41\u7545."

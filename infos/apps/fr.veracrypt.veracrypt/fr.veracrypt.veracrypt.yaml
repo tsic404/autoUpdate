@@ -1,0 +1,25 @@
+meta_info:
+    appid: fr.veracrypt.veracrypt
+    id: 1001157
+    name: VeraCrypt
+    arch: amd64
+    upstream:
+        from: veracrypt
+
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /usr
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/pixmaps/
+deepin_info:
+
+debian_info:

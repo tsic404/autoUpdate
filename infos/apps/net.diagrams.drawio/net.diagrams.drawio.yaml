@@ -1,0 +1,33 @@
+meta_info:
+    appid: net.diagrams.drawio
+    id: 1012956
+    name: draw.io
+    upstream:
+        from: github
+        info:
+            author: jgraph
+            project: drawio-desktop
+            suffix: AppImage
+            prefix: ""
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                path:
+                    - /usr/share/icons
+            mime:
+                path:
+                    - /usr/share/mime
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: diagrams.net\nSecurity-first diagramming for teams.Bring your storage to our online tool, or go max privacy with the desktop app.

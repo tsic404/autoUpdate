@@ -1,0 +1,26 @@
+meta_info:
+    appid: org.eclipse.eclipse-modeling
+    id: 1000825
+    name: Eclipse Modeling Tools
+    arch: amd64
+    upstream:
+        from: eclipse
+        info:
+            code: modeling
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Eclipse Modeling Tools.\nThe Modeling package provides tools and runtimes for building model-based applications. You can use it to graphically design domain models, to leverage those models at design time by creating and editing dynamic instances, to collaborate via Eclipse's team support with facilities for comparing and merging models and model instances structurally, and finally to generate Java code from those models to produce complete applications. In addition, via the package's discover catalog, you can easily install a wide range of additional powerful, model-based tools and runtimes to suit your specific needs.

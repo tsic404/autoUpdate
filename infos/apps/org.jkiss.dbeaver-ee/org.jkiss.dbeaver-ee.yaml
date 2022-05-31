@@ -1,0 +1,25 @@
+meta_info:
+    appid: org.jkiss.dbeaver-ee
+    id: 1008389
+    name: DBeaver EE(企业版)
+    arch: amd64
+    upstream:
+        from: dbeaver
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: DBeaver\nUniversal Database Client.

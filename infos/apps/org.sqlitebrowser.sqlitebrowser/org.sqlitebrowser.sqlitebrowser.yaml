@@ -1,0 +1,32 @@
+meta_info:
+    appid: org.sqlitebrowser.sqlitebrowser
+    id: 1002230
+    name: DB Browser for SQLite
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: sqlitebrowser
+            project: sqlitebrowser
+            suffix: AppImage
+            prefix: ""
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+            fix:
+                - AppRun_fix
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.\nDB4S is for users and developers who want to create, search, and edit databases. DB4S uses a familiar spreadsheet-like interface, and complicated SQL commands do not have to be learned.

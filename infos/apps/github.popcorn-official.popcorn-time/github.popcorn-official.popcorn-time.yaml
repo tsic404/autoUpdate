@@ -1,0 +1,31 @@
+meta_info:
+    appid: github.popcorn-official.popcorn-time
+    id: 1000507
+    name: Popcorn Time
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: popcorn-official
+            project: popcorn-desktop
+            suffix: linux64.zip
+            prefix: Popcorn-Time
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+            fix:
+                - permission_fix
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Popcorn Time\nA multi-platform, free software BitTorrent client that includes an integrated media player.

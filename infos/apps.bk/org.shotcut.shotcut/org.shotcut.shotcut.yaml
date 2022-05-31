@@ -1,0 +1,29 @@
+meta_info:
+    appid: org.shotcut.shotcut
+    id: 1002045
+    name: Shotcut
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: mltframework
+            project: shotcut
+            suffix: AppImage
+            prefix: shotcut-linux-x86_64
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Shotcut\nShotcut is a free, open source, cross-platform video editor.

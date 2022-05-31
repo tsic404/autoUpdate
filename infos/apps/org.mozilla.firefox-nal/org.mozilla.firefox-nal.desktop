@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=/opt/apps/org.mozilla.firefox-nal/files/firefox
+Icon=firefox-nal
+Name=firefox-nal
+Name[zh_CN]=火狐浏览器国际版
+Terminal=false
+Type=Application

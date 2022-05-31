@@ -1,0 +1,54 @@
+{
+    "meta":{
+        "source":"telegram",
+        "build":"binary",
+        "telegram":{},
+        "appid":"org.telegram-desktop",
+        "pkg_ver":"3.7.1",
+        "extra":[
+            "icon_fix",
+            "desktop_fix",
+            "remove_updater"
+        ],
+        "content":"/",
+        "url":"https://updates.tdesktop.com/tlinux/tsetup.3.7.1.tar.xz",
+        "innormal":false
+    },
+    "debian":{
+        "Package":"org.telegram-desktop",
+        "Version":"3.7.1",
+        "Architecture":"amd64",
+        "Section":"net",
+        "Priority":"optional",
+        "Installed-Size":"321572",
+        "Recommends":"fonts-open-sans",
+        "Conflicts":"telegram-desktop",
+        "Replaces":"telegram-desktop",
+        "HomePage":"https://desktop.telegram.org",
+        "Maintainer":"Liu Heng <liuhenga@uniontech.com>",
+        "Description":"official telegram messaging app\nTelegram is a messaging app with a focus on speed and security, it is\nsuper-fast, simple and free. You can use Telegram on all your devices at the\nsame time \u2014 your messages sync seamlessly across any number of your phones,\ntablets or computers."
+    },
+    "info":{
+        "appid":"org.telegram-desktop",
+        "name":"telegram-desktop",
+        "version":"3.7.1",
+        "arch":[
+            "amd64"
+        ],
+        "permissions":{
+            "autostart":false,
+            "notification":false,
+            "trayicon":false,
+            "clipboard":false,
+            "account":false,
+            "bluetooth":false,
+            "camera":false,
+            "audio_record":false,
+            "installed_apps":false
+        },
+        "support-plugins":[],
+        "plugins":[]
+    },
+    "entries":{},
+    "non-update":"1"
+}

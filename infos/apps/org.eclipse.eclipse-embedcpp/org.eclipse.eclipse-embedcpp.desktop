@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Eclipse IDE for Embedded C/C++ Developers
+Icon=eclipse-embedcpp
+Exec=/opt/apps/org.eclipse.eclipse-embedcpp/files/eclipse %u
+Categories=Development;IDE;
+Comment=Eclipse IDE for Embedded C/C++ Developers
+StartupWMClass=Eclipse
+StartupNotify=true
+Terminal=false

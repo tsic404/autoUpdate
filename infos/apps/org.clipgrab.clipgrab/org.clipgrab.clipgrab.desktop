@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ClipGrab
+Type=Application
+Comment=Download and Convert Online Videos
+Exec=/opt/apps/org.clipgrab.clipgrab/files/AppRun
+Terminal=false
+Icon=clipgrab
+Categories=AudioVideo;

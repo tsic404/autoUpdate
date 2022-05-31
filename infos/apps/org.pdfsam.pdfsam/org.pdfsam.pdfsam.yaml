@@ -1,0 +1,31 @@
+meta_info:
+    appid: org.pdfsam.pdfsam
+    id: 1000799
+    name: PDFsam
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: torakiki
+            project: pdfsam
+            suffix: linux.tar.gz
+            prefix: ""
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+            fix:
+                - permision_fix
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+       Description: PDFSAM\nMerge, split, rotate, convert, edit, sign PDF files... we've got you covered.

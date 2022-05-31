@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=SmartGit
+Keywords=git;svn;subversion
+GenericName=Git-Client
+Type=Application
+Categories=Development;RevisionControl
+Terminal=false
+StartupNotify=true
+StartupWMClass=SmartGit
+Exec=/opt/apps/com.syntevo.smartgit/files/bin/smartgit.sh %u
+MimeType=x-scheme-handler/git;x-scheme-handler/smartgit;x-scheme-handler/sourcetree;
+Icon=smartgit

@@ -1,0 +1,28 @@
+meta_info:
+    appid: io.webtorrent.webtorrent
+    id: 1000612
+    name: WebTorrent
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: webtorrent
+            project: webtorrent-desktop
+            suffix: amd64.deb
+            prefix: ""
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /usr
+        applications:
+            path:
+                - /usr/share/applications/
+            fix:
+                - exec_fix
+        icons:
+            path:
+                - /usr/share/icons/
+deepin_info:
+
+debian_info:

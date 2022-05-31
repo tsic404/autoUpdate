@@ -1,0 +1,29 @@
+meta_info:
+    appid: github.foundry376.mailspring
+    id: 1000641
+    name: Mailspring
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: Foundry376
+            project: Mailspring
+            suffix: amd64.deb
+            prefix: ""
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /usr/share/mailspring/
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+deepin_info:
+
+debian_info:

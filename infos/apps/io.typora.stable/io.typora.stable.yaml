@@ -1,0 +1,25 @@
+meta_info:
+    appid: io.typora.stable
+    id: 1066874
+    name: typora
+    arch: amd64
+    upstream:
+        from: typora
+
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /usr
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+deepin_info:
+
+debian_info:

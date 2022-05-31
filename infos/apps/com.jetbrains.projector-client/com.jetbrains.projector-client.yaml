@@ -1,0 +1,32 @@
+meta_info:
+    appid: com.jetbrains.projector-client
+    id: 1013173
+    name: Projector
+    upstream:
+        from: github
+        info:
+            author: JetBrains
+            project: projector-client
+            suffix: zip
+            prefix: projector-linux-x64
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+            fix:
+                - permission_fix
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Projector\nRun JetBrains IDEs and Swing apps remotely over the network.

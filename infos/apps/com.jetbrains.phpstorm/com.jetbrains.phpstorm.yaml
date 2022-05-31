@@ -1,0 +1,29 @@
+meta_info:
+    appid: com.jetbrains.phpstorm
+    id: 1010924
+    name: PhpStorm
+    upstream:
+        from: jetbrains
+        info:
+            code: PS
+    arch: amd64
+    callHooks: false
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: PhpStrom\nThe Lightning-Smart PHP IDE.
+

@@ -1,0 +1,105 @@
+meta_info:
+# 包名
+  appid: xxxx.xxxx.xxx
+# 商店提交后台ID数据，用于自动提交
+  id: 100xxxx
+# 应用名称
+  name: xxx
+# 上架的系统版本（暂时无用） 
+  systemStr:
+# 架构信息
+  arch:
+    - amd64
+  upstream:
+# 调用检测版本的模块
+    from:
+# 检测版本时需要的额外信息
+    info:
+
+# 压包时的信息
+build_info:
+  binary:
+  # 是否为deb？
+    type:
+    # 程序路径主体
+    content_path: /
+    # entries 目录下支持的目录结构，常用的applications,icons,mime
+    entries:
+      applications:
+        path:
+        fix:
+
+      icons:
+        path:
+        fix:
+
+      mime:
+        path:
+        fix:
+
+      glib-2.0:
+        path:
+        fix:
+      # dbus-1/service
+      service:
+        path:
+        fix:
+
+      GConf:
+        path:
+        fix:
+
+      help:
+        path:
+        fix:
+
+      locale:
+        path:
+        fix:
+
+      fcitx:
+        path:
+        fix:
+
+      polkit-1:
+        path:
+        fix:
+
+      fonts/files:
+        path:
+        fix:
+  
+      fontx/conf:
+        path:
+        fix:
+
+      plugin/fcitx:
+        path:
+        fix:
+
+      plugin/browser:
+        path:
+        fix:
+
+# deepin_info
+deepin_info:
+  permissions:
+    autostart:
+    notification:
+    trayicon:
+    clipboard:
+    account:
+    bluetooth:
+    camera:
+    audio_record:
+    installed_apps:
+  support-plugins:
+  plugins:
+
+debian_info:
+  # remove some need removed
+  need_remove:
+    Recommends: False
+  # patched 到debian/control
+  debian_patched:
+    Description:

@@ -1,0 +1,32 @@
+meta_info:
+    appid: github.v2rayA.v2rayA
+    id: 1070126
+    name: v2rayA
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: v2rayA
+            project: v2rayA
+            suffix: ""
+            prefix: installer_debian_amd64
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /usr
+            fix:
+                - service_fix
+                - debian_fix
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+deepin_info:
+
+debian_info:

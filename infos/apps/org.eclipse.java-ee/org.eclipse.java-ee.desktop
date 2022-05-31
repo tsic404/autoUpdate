@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Eclipse IDE for Java EE
+Icon=eclipse-jee
+Exec=/opt/apps/org.eclipse.java-ee/files/eclipse %u
+Categories=Development;IDE;
+Comment=Eclipse IDE for Enterprise Java and Web Developers
+StartupWMClass=Eclipse
+StartupNotify=true
+Terminal=false

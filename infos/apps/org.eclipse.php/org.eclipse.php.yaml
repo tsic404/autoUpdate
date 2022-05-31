@@ -1,0 +1,27 @@
+meta_info:
+    appid: org.eclipse.php
+    id: 1000580
+    name: Eclipse for PHP Developers
+    arch: amd64
+    upstream:
+        from: eclipse
+        info:
+            code: php
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Eclipse IDE for PHP Developers\nThe essential tools for any PHP developer, including PHP language support, Git client, Mylyn and editors for JavaScript, TypeScript, HTML, CSS and XML.

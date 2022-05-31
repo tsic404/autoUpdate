@@ -1,0 +1,29 @@
+meta_info:
+    appid: github.qier222.yesplaymusic
+    id: 1014169
+    name: YesPlayMusic
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: qier222
+            project: YesPlayMusic
+            suffix: AppImage
+            prefix: ""
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: YesPlayMusic\nA third party music player for Netease Music.

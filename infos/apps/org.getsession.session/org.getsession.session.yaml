@@ -1,0 +1,24 @@
+meta_info:
+    appid: org.getsession.session
+    id: 1008822
+    name: Session
+    arch: amd64
+    upstream:
+        from: session
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Session integrates directly with Oxen Service Nodes, which are a set of distributed, decentralized and Sybil resistant nodes.

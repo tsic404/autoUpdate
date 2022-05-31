@@ -1,0 +1,26 @@
+meta_info:
+    appid: org.eclipse.eclipse-scout
+    id: 
+    name: Eclipse IDE for Scout Developers
+    arch: amd64
+    upstream:
+        from: eclipse
+        info:
+            code: scout
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Eclipse IDE for Scout Developers.\nEclipse Scout is a Java/HTML5 framework to develop business applications that run on the desktop, on tablets and mobile devices. This package includes Eclipse IDE support for Scout developers and source code.

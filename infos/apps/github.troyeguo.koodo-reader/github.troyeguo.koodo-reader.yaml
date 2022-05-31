@@ -1,0 +1,31 @@
+meta_info:
+    appid: github.troyeguo.koodo-reader
+    id: 1070124
+    name: Koodo Reader
+    arch: amd64
+    upstream:
+        from: github
+        info:
+            author: troyeguo
+            project: koodo-reader
+            suffix: .AppImage
+            prefix: ""
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        applications:
+            fix:
+                - desktop_fix
+        icons:
+            path:
+                - /usr/share/icons/
+        mime:
+            fix:
+                - mime_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: A cross-platform ebook reader.

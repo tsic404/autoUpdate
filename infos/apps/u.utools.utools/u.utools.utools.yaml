@@ -1,0 +1,26 @@
+meta_info:
+    appid: u.utools.utools
+    id: 1001057
+    name: uTools
+    upstream:
+        from: utools
+    
+    arch: amd64
+
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /opt/uTools/
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+deepin_info:
+
+debian_info:

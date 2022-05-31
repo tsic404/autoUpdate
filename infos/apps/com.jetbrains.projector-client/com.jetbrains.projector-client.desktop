@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Projector Launcher
+Exec=/opt/apps/com.jetbrains.projector-client/files/projector
+Path=/opt/apps/com.jetbrains.projector-client/files/
+Terminal=false
+Type=Application
+Icon=projector
+StartupWMClass=projector-launcher
+Categories=Development;
+Keywords=Remote Development;Development;

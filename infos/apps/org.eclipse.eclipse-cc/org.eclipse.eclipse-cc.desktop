@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Eclipse IDE for C/C++ Developers
+Icon=eclipse-cpp
+Exec=/opt/apps/org.eclipse.eclipse-cc/files/eclipse %u
+Categories=Development;IDE;
+Comment=Eclipse IDE for C/C++ Developers.
+StartupWMClass=Eclipse
+StartupNotify=true
+Terminal=false

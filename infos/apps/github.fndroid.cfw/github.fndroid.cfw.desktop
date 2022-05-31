@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Clash for Windows
+Exec=/opt/apps/github.fndroid.cfw/files/cfw
+Terminal=false
+Type=Application
+Icon=cfw
+StartupWMClass=clash for windows
+Comment=A Linux GUI based on Clash and Electron.
+Categories=Network;
+Keywords=network;proxy;

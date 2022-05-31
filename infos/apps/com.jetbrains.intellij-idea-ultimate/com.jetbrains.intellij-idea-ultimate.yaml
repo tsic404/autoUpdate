@@ -1,0 +1,29 @@
+meta_info:
+    appid: com.jetbrains.intellij-idea-ultimate
+    id: 1007794
+    name: IntelliJ IDEA Ultimate
+    upstream:
+        from: jetbrains
+        info:
+            code: IIU
+    systemStr:
+        - 社区版
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: IntelliJ IDEA\nCapable and Ergonmic IDE for JVM.
