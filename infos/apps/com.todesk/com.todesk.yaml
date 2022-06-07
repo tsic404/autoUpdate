@@ -1,0 +1,33 @@
+meta_info:
+    appid: com.todesk
+    id: 1070897
+    name: ToDesk
+    arch: amd64
+    upstream:
+        from: todesk
+
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /opt/todesk/
+            fix:
+                - debian_fix
+                - postinst_fix
+                - preinst_fix
+                - prerm_fix
+                - service_fix
+                - font_fix
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+
+deepin_info:
+
+debian_info:
