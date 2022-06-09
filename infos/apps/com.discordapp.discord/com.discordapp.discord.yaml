@@ -1,0 +1,23 @@
+meta_info:
+    appid: com.discordapp.discord
+    id: 1000549
+    name: Discord
+    upstream:
+        from: discord
+    arch: amd64
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /usr/share/discord
+        entries:
+            applications:
+                path:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
