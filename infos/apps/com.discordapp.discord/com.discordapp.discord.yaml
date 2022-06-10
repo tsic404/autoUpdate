@@ -10,6 +10,8 @@ build_info:
         type: deb
         content:
             path: /usr/share/discord
+            fix:
+                - patch_version
         entries:
             applications:
                 path:
