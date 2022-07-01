@@ -15,15 +15,16 @@ build_info:
         type: binary
         content:
             path: /
-        applications:
-            fix:
-                - desktop_fix
-        icons:
-            path:
-                - /usr/share/icons/
-        mime:
-            fix:
-                - mime_fix
+        entries:
+            applications:
+                fix:
+                    - desktops_fix
+            icons:
+                path:
+                    - /usr/share/icons/
+            mime:
+                fix:
+                    - mime_fix
 deepin_info:
 
 debian_info:
