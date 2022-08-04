@@ -21,4 +21,5 @@ deepin_info:
 
 debian_info:
     debian_patched:
-        Description: A friendly downloader for YouTube and other sites\nClipGrab is a free downloader and converter for YouTube, Vimeo, Facebook and many other online video sites.
+        Description: "A friendly downloader for YouTube and other sites
+ ClipGrab is a free downloader and converter for YouTube, Vimeo, Facebook and many other online video sites."

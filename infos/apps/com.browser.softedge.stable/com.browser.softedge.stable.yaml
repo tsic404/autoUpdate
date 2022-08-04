@@ -1,16 +1,16 @@
 meta_info:
-    appid: com.browser.softedge
-    id: 1011152
-    name: Microsoft Edge Beta
+    appid: com.browser.softedge.stable
+    id: 1016421
+    name: Microsoft Edge
     upstream:
         from: edge
-        channel: beta
+        channel: stable
     arch: amd64
 build_info:
     binary:
         type: deb
         content:
-            path: /opt/microsoft/msedge-beta
+            path: /opt/microsoft/msedge/
         entries:
             applications:
                 path:

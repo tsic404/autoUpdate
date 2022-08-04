@@ -37,6 +37,8 @@ class AbsSource:
             self.url = url
             self.version = ver
             self.need_update.append(self)
+        else:
+            self.logger.info(self.appid + " has the latest version! ")
 
     def get_json_by_url(self, url, headers={}):
         return get(url, headers=headers).json()

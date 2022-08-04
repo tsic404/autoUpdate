@@ -1,0 +1,38 @@
+meta_info:
+    appid: org.cloud.owncloud
+    id: 1002211
+    name: ownCloud
+    arch: amd64
+    upstream:
+        from: owncloud
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                    - /usr/share/icons/hicolor/
+            mime:
+                path:
+                    - /usr/share/mime/
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: "folder synchronization with an ownCloud server - GUI
+ The ownCloudSync system lets you always have your latest files wherever
+ you are. Just specify one or more folders on the local machine to and a server
+ to synchronize to. You can configure more computers to synchronize to the same
+ server and any change to the files on one computer will silently and reliably
+ flow across to every other.
+ .
+ owncloud-client provides the graphical client specialising in
+ synchronizing with cloud storage provided by ownCloud."
