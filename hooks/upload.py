@@ -23,8 +23,8 @@ def call(app):
     if (app_info['pkg_version'].__eq__(app.version)):
         print("same version submit")
         return
-    developer = app.meta_info.get("developer") if app.meta_info.get("developer") else "appdeveloper"
-    submit(app.id, app.packaged, account['username'], account['password'], developer_name=developer)
+    developer = app.meta_info.get("developer") if app.meta_info.get("developer") else "deepin-team"
+    submit(app, app.packaged, account['username'], account['password'], developer_name=developer)
     app_info = get_seach(cookies=cookies, app_id=app.id)
     if (app_info['pkg_version'].__eq__(app.version)):
         print("submit successful")
