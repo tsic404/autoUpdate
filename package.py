@@ -3,7 +3,6 @@
 from os import listdir, makedirs, popen
 from shutil import move, rmtree
 from os.path import join, exists
-import sys
 
 from scripts.extract import Extract
 from scripts.utils import Logger, copy_content, faketime_at, import_module_from, json_write, run_in
@@ -24,7 +23,7 @@ class App:
     
     @property
     def id(self):
-        return self.meta_info.get("id")
+        return str(self.meta_info.get("id"))
     
     @property
     def name(self):
@@ -218,5 +217,9 @@ class App:
 
     def run(self):
         self.clean_package()
-        self.package()
-        self.clean_package()
+        try:
+            self.package()
+        except BaseException as e:
+            print("build failed for " + self.appid + " because of " + str(e))
+        finally:
+            self.clean_package()

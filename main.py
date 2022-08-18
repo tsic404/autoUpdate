@@ -37,11 +37,7 @@ class client:
             with run_in(self.config.download_path):
                 app.origin_file = Downloader(self.config).run(app)
             app = App(config=self.config, app=app.__dict__)
-            try:
-                app.run()
-                self.call_hooks(app=app)
-            except BaseException as e:
-                print("build failed for " + app.appid + " because of " + str(e))
+            app.run()
                 
                 
     def add_single_one(self, appid):
