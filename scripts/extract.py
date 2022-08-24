@@ -1,11 +1,10 @@
 
-from genericpath import exists
 from posixpath import basename, splitext
 from shutil import move, rmtree
 from scripts.utils import singleton
 from os import popen, listdir, remove, stat, chmod, walk,getcwd
 from tempfile import mkdtemp
-from os.path import join, isfile, isdir
+from os.path import join, isfile, isdir,exists
 from bz2 import BZ2File
 from gzip import GzipFile
 from zipfile import ZipFile
@@ -68,7 +67,7 @@ class Extract:
         for i in mode:
             if int(i) % 2 != 1:
                 chmod(file, 0o755)
-        popen(file + " " + shell_options).read()
+        popen(file + " " + shell_options).read()       
         extract_path = move("squashfs-root", extract_path)
         for i, j, k in walk(extract_path):
             chmod(i, 0o755)

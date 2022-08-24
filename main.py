@@ -9,7 +9,7 @@ from infos.info import AbsSource
 from scripts.conf import get_conf
 from yaml import safe_load
 from scripts.downloader import Downloader
-from scripts.utils import Logger, import_module_from, run_in
+from scripts.utils import import_module_from, run_in
 from threading import Thread
 
 class client:
@@ -37,9 +37,12 @@ class client:
             with run_in(self.config.download_path):
                 app.origin_file = Downloader(self.config).run(app)
             app = App(config=self.config, app=app.__dict__)
-            app.run()
-                
-                
+            try:
+                app.run()
+                self.call_hooks(app=app)
+            except BaseException as e:
+                print("build failed for " + app.appid + " because of " + str(e))
+
     def add_single_one(self, appid):
         with open(join(self.config.info, "apps" ,appid, appid + ".yaml")) as f:
             app = safe_load(f)

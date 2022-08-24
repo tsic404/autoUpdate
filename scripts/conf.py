@@ -4,7 +4,6 @@ from os.path import join
 from os import listdir
 from os.path import abspath
 from yaml import YAMLObject, safe_load, dump
-from git.repo import Repo
 from scripts.utils import test_proxy_not_env, singleton
 from scripts.sqlite import VerDB
 
