@@ -1,0 +1,30 @@
+meta_info:
+    appid: com.scootersoftware.bcompare
+    id: 1002961
+    name: beyond compare
+    arch: amd64
+    upstream:
+        from: bcompare
+
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /usr
+            fix:
+                - beyondcompare_fix
+        entries:
+            applications:
+                path:
+                    - /usr/share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                fix:
+                    - icons_fix
+            mime:
+                path:
+                    - /usr/share/mime/
+deepin_info:
+
+debian_info:

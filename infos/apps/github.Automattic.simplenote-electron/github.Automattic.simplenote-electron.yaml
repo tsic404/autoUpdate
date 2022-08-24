@@ -2,6 +2,7 @@ meta_info:
     appid: github.Automattic.simplenote-electron
     id: 1002075
     name: Simplenote
+    arch: amd64
     upstream:
         from: github
         info:
