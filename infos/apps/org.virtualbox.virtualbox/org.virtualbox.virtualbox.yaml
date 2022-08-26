@@ -1,0 +1,23 @@
+meta_info:
+    appid: org.virtualbox.virtualbox
+    id: 1002342
+    name: VirtualBox-虚拟机
+    arch: amd64
+    upstream:
+        from: vbox
+
+build_info:
+    binary:
+        type: deb
+        content:
+            path: /
+            fix:
+                - content_fix
+                - debian_fix
+        entries:
+
+deepin_info:
+
+debian_info:
+    need_remove:
+      Recommends: true

@@ -108,7 +108,10 @@ class App:
                 patched_control.__setitem__(control, debian_patched.get(control))
         
         if self.is_deb:
-            origin_control = unparse_control_fields(load_control_file(self.origin_extracted_path + "/DEBIAN/control"))
+            if exists(self.origin_extracted_path + "/DEBIAN/control"):
+                origin_control = unparse_control_fields(load_control_file(self.origin_extracted_path + "/DEBIAN/control"))
+            else:
+                origin_control = unparse_control_fields(load_control_file(self.package_path + "/DEBIAN/control"))
             remove_items = debian_info.get("need_remove", dict())
             for item in remove_items.keys():
                 if remove_items.get(item) and origin_control.__contains__(item):
@@ -222,4 +225,5 @@ class App:
         except BaseException as e:
             print("build failed for " + self.appid + " because of " + str(e))
         finally:
+            return
             self.clean_package()

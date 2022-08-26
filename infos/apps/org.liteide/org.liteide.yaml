@@ -1,0 +1,30 @@
+meta_info:
+    appid: org.liteide
+    id: 1002007
+    name: LiteIDE
+    upstream:
+        from: github
+        info:
+            author: visualfc
+            project: liteide
+            suffix: .AppImage
+            prefix: ""
+    arch: amd64
+
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                fix:
+                    - desktop_fix
+            icons:
+                fix:
+                    - icons_fix
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: A simple, open source, cross-platform Go IDE.
