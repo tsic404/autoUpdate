@@ -1,0 +1,41 @@
+name: update
+
+on:
+  workflow_dispatch
+
+jobs:
+  update:
+    outputs:
+      APPS: ${{ steps.apps.outputs.APPS }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with: 
+          ref: ${{ github.ref }}
+
+      - name: list
+        id: apps
+        run: |
+          echo APPS={payload:[\"`echo \`ls infos/apps/\` | sed 's| |","|g'`\"]} >> $GITHUB_OUTPUT
+  
+  build:
+    name: build
+    needs: update
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.update.outputs.APPS) }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with: 
+          ref: ${{ github.ref }}
+
+      - name: install_depends
+        run: |
+          sudo apt-get install python3-pip
+          pip3 install -r requirements.txt
+
+      - name: package
+        run: |
+          python3 main.py ${{ matrix.payload.app }}

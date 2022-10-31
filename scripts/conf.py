@@ -6,6 +6,7 @@ from os.path import abspath
 from yaml import YAMLObject, safe_load, dump
 from scripts.utils import test_proxy_not_env, singleton
 from scripts.sqlite import VerDB
+from os import getcwd
 
 @singleton
 class configure(YAMLObject):
@@ -32,12 +33,12 @@ class configure(YAMLObject):
     
     @property
     def upstream(self):
-        upstream = join(self.info, "source")
+        upstream = join(getcwd(), "source")
         assert exists(upstream) is True
         return upstream
 
     def update_infos(self):
-        return [abspath(join(self.info, "apps", c, c + ".yaml")) for c in listdir(join(self.info, "apps"))]
+        return [abspath(join(getcwd(), "apps", c, c + ".yaml")) for c in listdir(join(getcwd(), "apps"))]
     
     def get_db(self):
         return VerDB(self)

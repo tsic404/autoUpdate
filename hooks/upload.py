@@ -41,4 +41,3 @@ def call(app):
             print("cooperation create record failed")
     else:
         print("submit file failed")
-    
