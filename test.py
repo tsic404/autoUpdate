@@ -1,6 +1,6 @@
 
 
-from infos.source.bcompare import Source
+from infos.source.owncloud import Source
 
 from scripts.conf import get_conf
 

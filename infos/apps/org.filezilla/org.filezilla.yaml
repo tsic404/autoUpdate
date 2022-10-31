@@ -1,0 +1,27 @@
+meta_info:
+    appid: org.filezilla
+    id: 1000392
+    name: FileZilla-FTP客户端
+    arch: amd64
+    upstream:
+        from: filezilla
+build_info:
+    binary:
+        type: binary
+        content:
+            path: /
+        entries:
+            applications:
+                path:
+                  - /share/applications/
+                fix:
+                    - exec_fix
+            icons:
+                path:
+                  - /share/icons/
+
+deepin_info:
+
+debian_info:
+    debian_patched:
+        Description: Full-featured graphical FTP/FTPS/SFTP client\nFileZilla is a full-featured FTP client with an easy-to-use GUI.

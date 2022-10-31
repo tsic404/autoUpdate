@@ -8,18 +8,24 @@ meta_info:
 
 build_info:
     binary:
-        type: deb
+        type: binary
         content:
-            path: /usr
+            path: /
         entries:
             applications:
-                path:
-                    - /usr/share/applications/
                 fix:
-                    - exec_fix
+                    - desktop_fix
             icons:
-                path:
-                    - /usr/share/icons/
+                fix:
+                    - icons_fix
 deepin_info:
 
 debian_info:
+  debian_patched:
+    Description: "a minimal Markdown reading & writing app. Change Log: (https://typora.io/windows/dev_release.html)\nMarkdown Editor"
+    Suggests: pandoc
+    Conflicts: typora
+    Replaces: typora
+    Recommends: lsb-release
+    Priority: optional
+
