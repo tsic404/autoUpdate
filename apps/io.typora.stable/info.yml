@@ -1,0 +1,25 @@
+appid: io.typora.stable
+id: 1066874
+
+binaryPacakge:
+  build:
+    type: binary
+    content: 
+      path: /
+    entries: 
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      a minimal Markdown reading & writing app. Change Log: (https://typora.io/windows/dev_release.html)
+      Markdown Editor
+    Suggests: "pandoc"
+    Conflicts: "typora"
+    Replaces: "typora"
+    Recommends: "lsb-release"
