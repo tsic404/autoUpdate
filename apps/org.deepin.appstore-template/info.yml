@@ -1,0 +1,13 @@
+meta_info:
+    appid: org.deepin.appstore-template
+    id: 1000000
+    name: appstore-template
+
+deepin_info:
+
+debian_info:
+  debian_patched:
+    Description: "a template appstore auto check"
+    Suggests: pandoc
+    Recommends: lsb-release
+    Priority: optional

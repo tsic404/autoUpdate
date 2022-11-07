@@ -1,0 +1,5 @@
+#!/bin/env bash
+
+echo "X86 1.0 https://bbs.deepin.org"
+
+
