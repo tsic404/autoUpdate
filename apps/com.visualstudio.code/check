@@ -1,0 +1,17 @@
+#!/bin/env python3
+from urllib.parse import urlparse
+from requests import get
+from re import search
+
+def main():
+    url = "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+    cdn = "https://vscode.cdn.azure.cn"
+    _url = urlparse(get(url, stream=True, allow_redirects=False).headers['Location'])
+    url = cdn + _url.path
+    ver = search(r"code_(.*)_amd64.deb", _url.path)
+    if ver:
+        ver = ver.groups()[0]
+    print("X86", ver, url)
+
+if __name__ == "__main__":
+    SystemExit(main())
