@@ -1,0 +1,97 @@
+name: check build
+
+on:
+  pull_request:
+    path:
+      "apps/**"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    name: get changed app
+    outputs:
+      UPDATES: ${{ steps.changed-app.outputs.UPDATES }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: list change app
+        id: changed-app
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: prDiff } = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: ${{ github.event.pull_request.number }},
+                mediaType: {
+                format: "diff",
+              },
+            });
+    
+            const changeApp = new Set()
+            const diffs = parsePatch(prDiff)
+            diffs.forEach(file => {
+            // foreach changed file
+                var filename
+                try {
+                    filename = file.newFileName.slice(2)
+                    console.log(filename)
+                } catch (error) {
+                    return
+                }
+            })
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }} 
+          key: workspace
+
+  build:
+    if: ${{ needs.check.outputs.CHNAGED != '' }}
+    strategy:
+      matrix: ${{ fromJson(needs.check.outputs.CHNAGED) }}
+    needs: check
+    uses: tsic404/autoUpdate/.github/workflows/build.yml@master
+    secrets: inherit
+    with:
+      url: ${{ matrix.payload.url }}
+      appid: ${{ matrix.payload.appid }}
+      version: ${{ matrix.payload.version }}
+      arch: ${{ matrix.payload.arch }}
+
+  clean:
+    name: clean github action cache
+    needs: build
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+
+      - name: List caches
+        id: list-caches
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ids="$(
+            gh api \
+              -H 'Accept: application/vnd.github+json' \
+              "/repos/${GITHUB_REPOSITORY}/actions/caches" | \
+            jq '.actions_caches[].id' |
+            tr '\n' ' ' \
+          )"
+          echo "cache_ids=$ids" >> $GITHUB_OUTPUT
+
+      - name: Wipe caches
+        id: wipe
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for id in ${{ steps.list-caches.outputs.cache_ids }}; do
+            gh api \
+              --method DELETE \
+              -H 'Accept: application/vnd.github+json' \
+              "/repos/${GITHUB_REPOSITORY}/actions/caches/$id"
+          done
