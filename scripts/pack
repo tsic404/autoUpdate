@@ -1,0 +1,23 @@
+#!/bin/env python3
+
+from os import environ, mkdir, chdir
+from os.path import split,abspath, exists
+from os import popen
+from sys import argv,path
+dirname, _ = split(abspath(__file__))
+path.append(dirname)
+path.append(dirname + "/../lib")
+from Utils import Downloader, Extract
+
+APPNAME = argv [1]
+
+if not exists("testbuild"):
+    mkdir("testbuild")
+
+chdir("testbuild")
+
+for res in popen("../apps/" + APPNAME + "/check").read().strip('\n').split('\n'):
+    arch, ver, url = res.strip('\n').split(' ')
+    file = Downloader().run(url)
+    extraced_dir = Extract().extract(file)
+    popen("PYTHONPATH=../lib GITHUB_OUTPUT=build_result ../apps/" + APPNAME + "/package." + arch + " " + extraced_dir + " " + ver).read()
