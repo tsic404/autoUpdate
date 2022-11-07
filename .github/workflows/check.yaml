@@ -1,0 +1,88 @@
+name: check build
+
+on:
+  pull_request:
+    path:
+      "apps/**"
+
+env:
+  PYTHONPATH: ${{ github.workspace }}/lib
+  GITHUB_TOKEN: ${{ github.token }}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    name: get changed app
+    outputs:
+      UPDATES: ${{ steps.changed-app.outputs.UPDATES }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: install_depends
+        run: |
+          sudo apt-get install python3-pip python3-venv python3-wheel python3-tk python3-dev xvfb xauth
+          python3 -m venv venv
+          source venv/bin/activate
+          pip3 install wheel
+          pip3 install -r requirements.txt
+
+      - name: list change app
+        id: changed-app
+        run: |
+          source venv/bin/activate
+          python scripts/list_change ${{ github.event.pull_request.number }}
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }} 
+          key: workspace
+
+  build:
+    if: ${{ needs.check.outputs.CHNAGED != '' }}
+    strategy:
+      matrix: ${{ fromJson(needs.check.outputs.CHNAGED) }}
+    needs: check
+    uses: tsic404/autoUpdate/.github/workflows/build.yml@master
+    secrets: inherit
+    with:
+      url: ${{ matrix.payload.url }}
+      appid: ${{ matrix.payload.appid }}
+      version: ${{ matrix.payload.version }}
+      arch: ${{ matrix.payload.arch }}
+
+  clean:
+    name: clean github action cache
+    needs: build
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+
+      - name: List caches
+        id: list-caches
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ids="$(
+            gh api \
+              -H 'Accept: application/vnd.github+json' \
+              "/repos/${GITHUB_REPOSITORY}/actions/caches" | \
+            jq '.actions_caches[].id' |
+            tr '\n' ' ' \
+          )"
+          echo "cache_ids=$ids" >> $GITHUB_OUTPUT
+
+      - name: Wipe caches
+        id: wipe
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for id in ${{ steps.list-caches.outputs.cache_ids }}; do
+            gh api \
+              --method DELETE \
+              -H 'Accept: application/vnd.github+json' \
+              "/repos/${GITHUB_REPOSITORY}/actions/caches/$id"
+          done
