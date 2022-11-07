@@ -1,0 +1,17 @@
+app_default:
+    default_permissioins:
+        autostart: False
+        notification: False
+        trayicon: False
+        clipboard: False
+        account: False
+        bluetooth: False
+        camera: False
+        audio_record: False
+        installed_apps: False
+    default_debian:
+        Priority: optional
+        Section: applications
+        Maintainer: Liu Heng <liuhenga@uniontech.com>
+
+faketime: "2021-10-01 00:00:00"
