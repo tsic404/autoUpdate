@@ -1,0 +1,20 @@
+#!/bin/env python3
+from pyvirtualdisplay import Display
+disp = Display(use_xauth=True)
+disp.start()
+
+from sys import argv
+from os import environ
+from AppstoreCheck import Appstore
+from Utils import get_conf
+from requests import post
+
+appid = argv[1]
+version = argv[2]
+packagedFile = argv[3]
+
+appstore = Appstore(environ['APPUSERNAME'], environ['APPPASSWORD'])
+conf = get_conf("apps/" + appid + "/info.yml")
+appstore.uploadUpdate(appid=conf.get("id"), file=packagedFile)
+
+disp.stop()
