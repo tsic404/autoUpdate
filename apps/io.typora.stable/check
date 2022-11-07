@@ -1,0 +1,21 @@
+#!/bin/env python3
+import sys
+import requests
+from bs4 import BeautifulSoup
+from re import search
+
+def main():
+    soup = BeautifulSoup(requests.get("https://typora.io/releases/stable.html").text, features="html.parser")
+        
+    d_url = r'https://download.typora.io/linux/Typora-linux-x64-(.*?).tar.gz'
+    for i in soup.find_all(class_='download-btn linux'):
+        try:
+            res = search(d_url, i.attrs["href"])
+            if res !=None:
+                print("X86", res.groups()[0], res.group())
+                return
+        except AttributeError:
+            pass
+
+if __name__ == "__main__":
+    sys.exit(main())

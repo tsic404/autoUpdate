@@ -1,0 +1,9 @@
+#!/bin/env python3
+from GithubAction import setOutput
+from Utils import Downloader
+
+def main():
+    setOutput("FILE", Downloader().run(sys.argv[1]))
+
+if __name__ == "__main__":
+    sys.exit(main())
