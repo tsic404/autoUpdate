@@ -1,0 +1,72 @@
+#!/bin/env python3
+from pyvirtualdisplay import Display
+disp = Display(use_xauth=True)
+disp.start()
+
+from threading import Thread
+from os.path import abspath, join, split, split
+from os import listdir, popen, environ
+from yaml import safe_load
+from time import sleep
+
+from GithubAction import setOutput
+from AppstoreCheck import Appstore
+
+need_updates = {"payload": []}
+
+def listApps():
+    appsPath = join(split(abspath(__file__))[0],"../apps")
+    return listdir(appsPath)
+
+def check(appid: str, appstore: Appstore):
+    if appid.__eq__("org.deepin.appstore-template"):
+        return
+    info_path = join("apps", appid, "info.yml")
+    check_bin_path = join("apps", appid, "check")
+    try:
+        # loads app basic info
+        app_info = None
+        with open (info_path, "r") as info_file:
+            app_info = safe_load(info_file)
+
+        # check upstream version
+        res = None
+        count = 0
+        while not res and count < 10:
+            res = popen(cmd=check_bin_path).read().strip('\n')
+            count += 1
+            sleep(20)
+        for archinfo in res.split('\n'):
+            arch, ver, url= archinfo.strip('\n').split(' ')
+            
+            # check app in store version
+            if(appstore.isNeedUpdate(app_info.get('id'), ver, arch)):
+                need_updates.get("payload").append({
+                    "arch": arch,
+                    "appid": appid,
+                    "version": ver,
+                    "url": url,
+                })
+    except BaseException as e:
+        print("failed to get ver and url for " + appid)
+        print("because of " + str(e))
+
+def main():
+    appstore = Appstore(environ['APPUSERNAME'], environ['APPPASSWORD'])
+    apps = listApps()
+    threads = list()
+    for app in apps:
+        threads.append(Thread(target=check(appid=app, appstore=appstore),name=app))
+
+    for thread in threads:
+        thread.start()
+        thread.join()
+
+    if len(need_updates.get("payload", [])) > 0:
+        setOutput("UPDATES", str(need_updates))
+    print(str(need_updates))
+
+if __name__ == "__main__":
+    main()
+
+disp.stop()

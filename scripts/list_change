@@ -1,0 +1,27 @@
+#!/bin/env python3
+
+from sys import argv
+from requests import get
+from os import environ
+
+from GithubAction import setOutput
+
+pr_no = argv[1]
+changed = set()
+
+github_token = environ.get("GITHUB_TOKEN")
+headers = {
+    "Accept": "application/vnd.github+json",
+    "Authorization": "Bearer " + github_token
+}
+
+url = "https://api.github.com/repos/tsic404/autoUpdate/pulls/" + str(pr_no) + "/files"
+
+files = get(url = url, headers=headers).json()
+for file in files:
+    filename = file.get('filename')
+    if filename.startswith('apps'):
+        app = filename.split('/')[1]
+        changed.add(app)
+
+setOutput("CHNAGED", str({"payload": list(changed)}))

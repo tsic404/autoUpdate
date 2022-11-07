@@ -1,0 +1,67 @@
+name: build
+
+on:
+  workflow_call:
+    inputs:
+      url:
+        required: true
+        type: string
+      appid:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+      arch:
+        required: true
+        type: string
+env:
+  APPUSERNAME: ${{ secrets.APP_DEV_USERNAME }}
+  APPPASSWORD: ${{ secrets.APP_DEV_PASSWORD }}
+  PYTHONPATH: ${{ github.workspace }}/lib
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: install_depends
+        run: |
+          sudo apt-get install python3-pip python3-venv python3-tk python3-dev xvfb xauth faketime fakeroot
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }} 
+          key: workspace
+
+      - name: download
+        id: download
+        run: |
+          source venv/bin/activate
+          python3 scripts/download ${{ inputs.url }}
+    
+      - name: extract
+        id: extract
+        run: |
+          source venv/bin/activate
+          python3 scripts/extract ${{ steps.download.outputs.FILE }}
+
+      - name: package
+        id: package
+        run: |
+          source venv/bin/activate
+          ./apps/${{ inputs.appid }}/package.${{ inputs.arch }} ${{ steps.extract.outputs.EXTRACTED }} ${{ inputs.version }}
+
+      - name: upload intergration detail
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ inputs.appid }}
+          path: ${{ steps.package.outputs.PACKAGED }}
+
+      - name: call hooks
+        run: |
+          source venv/bin/activate
+          for i in `ls hooks`
+          do
+            ./hooks/$i ${{ inputs.appid }} ${{ inputs.version }} ${{ steps.package.outputs.PACKAGED }}
+          done
