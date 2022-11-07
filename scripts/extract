@@ -1,0 +1,10 @@
+#!/bin/env python3
+from sys import exit
+from GithubAction import setOutput
+from Utils import Extract
+
+def main():
+    setOutput("EXTRACTED",Extract().extract(argv[1]))
+
+if __name__ == "__main__":
+    exit(main())
