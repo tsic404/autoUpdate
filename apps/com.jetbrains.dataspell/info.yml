@@ -1,0 +1,17 @@
+appid: com.jetbrains.dataspell
+id: 1016467
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+      fix:
+        - code_fix
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+         - icons_fix
