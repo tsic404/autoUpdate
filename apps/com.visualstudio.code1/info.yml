@@ -1,0 +1,23 @@
+appid: com.visualstudio.code
+id: 1000483
+
+binaryPacakge:
+  build:
+    type: deb
+    content:
+      path: /usr/share/
+      fix:
+        - code_fix
+    entries:
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        fix:
+         - icons_fix
+
+      mime:
+        path:
+          - /usr/share/mime
