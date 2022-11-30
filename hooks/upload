@@ -12,7 +12,7 @@ from requests import post
 appid = argv[1]
 version = argv[2]
 packagedFile = argv[3]
-feedback_url = argv[4]
+feedback_url = environ['COOPERATION_URL']
 
 appstore = Appstore(environ['APPUSERNAME'], environ['APPPASSWORD'])
 conf = get_conf("apps/" + appid + "/info.yml")
