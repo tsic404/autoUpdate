@@ -1,0 +1,13 @@
+#!/bin/env python3
+import sys
+import requests
+from re import search
+
+def main():
+    url = "https://download-redirect.firefox.com.cn/?product=firefox-latest-ssl&os=linux64&lang=zh-CN"
+    url = requests.get(url, stream=True, allow_redirects=False).headers['Location']
+    ver = search(r"https://download-ssl.firefox.com.cn/releases/firefox/(.*)/zh-CN/Firefox-latest-x86_64.tar.bz2", url)[1]
+    print("X86", ver, url)
+
+if __name__ == "__main__":
+    sys.exit(main())
