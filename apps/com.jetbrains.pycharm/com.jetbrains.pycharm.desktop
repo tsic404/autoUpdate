@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=PyCharm Professional
+Icon=com.jetbrains.pycharm
+Exec=/opt/apps/com.jetbrains.pycharm/files/bin/pycharm.sh %u
+Categories=Development;IDE;
+StartupWMClass=jetbrains-pycharm
+Comment=The full-stack Python IDE
+StartupNotify=true
+Terminal=false
