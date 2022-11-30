@@ -1,0 +1,21 @@
+appid: com.jetbrains.pycharm
+id: 1002328
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+         - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      PyCharm
+      The Python IDE for Professional Developers.
