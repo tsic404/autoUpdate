@@ -1,0 +1,17 @@
+appid: cn.google.chrome
+id: 1003237
+
+binaryPacakge:
+  build:
+    type: deb
+    content: 
+      path: /opt/google/chrome/
+    entries: 
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        fix: 
+          - icons_fix

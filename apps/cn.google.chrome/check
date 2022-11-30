@@ -1,0 +1,13 @@
+#!/bin/env python3
+import sys
+import requests
+from re import search
+
+def main():
+    url = "https://omahaproxy.appspot.com/linux"
+    ver = requests.get(url).text
+    url ="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+    print("X86", ver, url)
+
+if __name__ == "__main__":
+    sys.exit(main())
