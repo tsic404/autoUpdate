@@ -1,0 +1,21 @@
+appid: com.mozilla.firefox-zh
+id: 1000422
+
+binaryPacakge:
+  build:
+    type: binary
+    content: 
+      path: /
+    entries: 
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      Firefox Browser
+      Get the browser that protects what\u2019s important.
