@@ -12,9 +12,18 @@ from requests import post
 appid = argv[1]
 version = argv[2]
 packagedFile = argv[3]
+feedback_url = argv[4]
 
 appstore = Appstore(environ['APPUSERNAME'], environ['APPPASSWORD'])
 conf = get_conf("apps/" + appid + "/info.yml")
 appstore.uploadUpdate(appid=conf.get("id"), file=packagedFile)
-
+if (appstore.getVersion(appid=appid).__eq__(version)):
+    data = appstore.__search(appid=conf.get("id"))
+    res = post(url = feedback_url, josn={
+            "package": appid,
+            "detail": data['app_name'],
+            "version": version,
+            "systemStr": appstore.get_all_systemStr(conf.get("id")),
+            "appid": conf.get("id")
+        })
 disp.stop()

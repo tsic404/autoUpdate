@@ -86,6 +86,21 @@ class Appstore:
                     if i.get('pkgArch').__eq__(arch):
                         return(i['pkg_name'], i['pkgArch'], i['pkg_version'])
         raise BaseException("failed to get ver info from app store")
+
+    def get_all_systemStr(self, app_id: str):
+        self.__check()
+        app_info = self.__search(app_id=app_id)
+        commnuitySystemStr = "社区版"
+        allSystemStr = "0"
+        detail_url = "https://appstore-dev.uniontech.com/devprod-api/store-dev-app/app/{id}/detail".format(id=app_info['id'])
+        res = get(url=detail_url, headers=headers, cookies=self.cookies).json()
+        if 200 == res['status']:
+            orin_pks = res.get("datas").get("app_origin_pkgs")
+            count = 0
+            for i in orin_pks:
+                count +=1
+                if commnuitySystemStr in i['systemStr'] or allSystemStr in i['supSys']:
+                    return i['systemStr']
     
     def getVersion(self, appid: str, systemStr: str = "社区版", arch: str = "X86"):
         info = self.__search(appid=appid)
