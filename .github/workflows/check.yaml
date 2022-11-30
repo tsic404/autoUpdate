@@ -5,6 +5,10 @@ on:
     path:
       "apps/**"
 
+concurrency:
+  group: ${{ github.workflow }}-pull/${{ github.event.number }}
+  cancel-in-progress: true
+
 env:
   PYTHONPATH: ${{ github.workspace }}/lib
   GITHUB_TOKEN: ${{ github.token }}

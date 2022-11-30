@@ -1,0 +1,17 @@
+appid: com.browser.softedge
+id: 1011152
+
+binaryPacakge:
+  build:
+    type: deb
+    content: 
+      path: /opt/microsoft/msedge-beta
+    entries: 
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        fix: 
+          - icons_fix
