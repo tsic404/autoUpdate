@@ -1,5 +1,5 @@
-appid: com.jetbrains.clion
-id: 1000475
+appid: com.jetbrains.intellij-idea-edu
+id: 1016467
 
 binaryPacakge:
   build:
@@ -17,4 +17,4 @@ binaryPacakge:
 debianInfo:
   debian_patched:
     Description: |
-      CLion A cross-platform IDE for C and C++.
+      IntelliJ IDEA Capable and Ergonmic IDE for JVM.
