@@ -1,0 +1,13 @@
+#!/bin/env python3
+import sys
+import requests
+from re import search
+
+def main():
+    url = "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US"
+    url = requests.get(url, stream=True, allow_redirects=False).headers['Location']
+    ver = search(r"https://download-installer.cdn.mozilla.net/pub/firefox/releases/(.*)/linux-x86_64/en-US/firefox-(.*).tar.bz2", url)[1]
+    print("X86", ver, url)
+
+if __name__ == "__main__":
+    sys.exit(main())
