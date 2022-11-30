@@ -73,6 +73,9 @@ class Appstore:
         if 200 == res['code']:
             return res.get('rows')[0]
         return {}
+
+    def search(self, appid: str) -> dict:
+        return self.__search(appid=appid)
     
     def __getAppVersion(self, id: str, systemStr: str = "社区版", arch: str = "X86"):
         self.__check()
@@ -89,7 +92,7 @@ class Appstore:
 
     def get_all_systemStr(self, app_id: str):
         self.__check()
-        app_info = self.__search(app_id=app_id)
+        app_info = self.__search(appid=app_id)
         commnuitySystemStr = "社区版"
         allSystemStr = "0"
         detail_url = "https://appstore-dev.uniontech.com/devprod-api/store-dev-app/app/{id}/detail".format(id=app_info['id'])
