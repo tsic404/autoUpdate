@@ -1,0 +1,20 @@
+appid: com.jetbrains.clion
+id: 1000475
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+         - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      The IDE for Professional Data Scientists
