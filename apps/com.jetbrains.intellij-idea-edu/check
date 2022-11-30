@@ -2,7 +2,7 @@
 from requests import get
 
 def main():
-    code = "DS"
+    code = "IIE"
     url = "https://data.services.jetbrains.com/products/releases?" \
           "code={code}&latest=true&type=release".replace("{code}", code)
     res_json = get(url).json()
