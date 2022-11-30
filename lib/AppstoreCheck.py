@@ -100,7 +100,7 @@ class Appstore:
             for i in orin_pks:
                 count +=1
                 if commnuitySystemStr in i['systemStr'] or allSystemStr in i['supSys']:
-                    return i['systemStr']
+                    return str(i['systemStr']).strip('[]')
     
     def getVersion(self, appid: str, systemStr: str = "社区版", arch: str = "X86"):
         info = self.__search(appid=appid)

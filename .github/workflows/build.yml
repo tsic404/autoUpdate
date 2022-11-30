@@ -21,6 +21,7 @@ on:
 env:
   APPUSERNAME: ${{ secrets.APP_DEV_USERNAME }}
   APPPASSWORD: ${{ secrets.APP_DEV_PASSWORD }}
+  COOPERATION_URL: ${{ secrets.COOPERATION_URL }}
   PYTHONPATH: ${{ github.workspace }}/lib
 
 jobs:
