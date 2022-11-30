@@ -17,7 +17,7 @@ feedback_url = environ['COOPERATION_URL']
 appstore = Appstore(environ['APPUSERNAME'], environ['APPPASSWORD'])
 conf = get_conf("apps/" + appid + "/info.yml")
 appstore.uploadUpdate(appid=conf.get("id"), file=packagedFile)
-if (appstore.getVersion(appid=appid).__eq__(version)):
+if (appstore.getVersion(appid=conf.get("id")).__eq__(version)):
     data = appstore.__search(appid=conf.get("id"))
     res = post(url = feedback_url, josn={
             "package": appid,
