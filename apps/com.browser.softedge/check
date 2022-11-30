@@ -1,0 +1,12 @@
+#!/bin/env python3
+import sys
+import requests
+from re import search
+
+def main():
+    url = "https://go.microsoft.com/fwlink/?linkid=2149139"
+    url = requests.head(url).headers['Location']
+    ver = search(r'microsoft-edge-beta_(.*)_amd64.deb', url)[1]
+    print("X86", ver, url)
+if __name__ == "__main__":
+    sys.exit(main())
