@@ -106,6 +106,7 @@ class Appstore:
         if oldVer is None:
             raise BaseException("failed to get ver info from app store")
         # new ver is more than old ver
+        print("verion in AppStore: " + oldVer, "version in upstream: " + newVer)
         res = run(["dpkg", "--compare-versions", newVer, "gt", oldVer])
         return res.returncode == 0
 
