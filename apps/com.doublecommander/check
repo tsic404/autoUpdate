@@ -1,0 +1,11 @@
+#!/bin/env python3
+from SourceforgeCheck import check
+
+sourceforge = {
+    "project": "doublecmd",
+    "d_filename": "doublecmd-(.*).gtk2.x86_64.tar.xz",
+    "arch": "X86"
+}
+
+if __name__ == "__main__":
+    SystemExit(check(sourceforge))

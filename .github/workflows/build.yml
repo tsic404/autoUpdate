@@ -56,12 +56,6 @@ jobs:
           source venv/bin/activate
           ./apps/${{ inputs.appid }}/package.${{ inputs.arch }} ${{ steps.extract.outputs.EXTRACTED }} ${{ inputs.version }}
 
-      - name: upload package
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ inputs.appid }}
-          path: ${{ steps.package.outputs.PACKAGED }}
-
       - name: call hooks
         if: ${{ inputs.hook }}
         run: |
@@ -70,3 +64,9 @@ jobs:
           do
             ./hooks/$i ${{ inputs.appid }} ${{ inputs.version }} ${{ steps.package.outputs.PACKAGED }}
           done
+
+      - name: upload package
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ inputs.appid }}
+          path: ${{ steps.package.outputs.PACKAGED }}

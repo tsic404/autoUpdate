@@ -1,0 +1,17 @@
+#!/bin/env python3
+import sys
+from requests import get
+from re import search
+
+def check():
+        url = "https://url.wiz.cn/u/linux_new"
+        url = get(url, stream=True, allow_redirects=False).headers['Location']
+        d_url = r"https://get.wiz.cn/x/wiznote-desktop-(.*)-linux-x86_64.AppImage"
+        res = search(d_url, url)
+        ver = res.groups()[0]
+        url = res.group()
+        url = url.replace("?version=latest", "")
+        print("X86", "1:"+ver, url)
+
+if __name__ == "__main__":
+    sys.exit(check())

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Android Studio
+Exec=/opt/apps/cn.androidgoogle.studio/files/bin/studio.sh %U
+Terminal=false
+Type=Application
+Icon=android-studio
+StartupWMClass=jetbrains-studio
+Version=1.0
+Comment=An IDE for Android app development.
+StartupNotify=true
+MimeType=x-scheme-handler/bitwarden;
+Categories=Development;IDE;

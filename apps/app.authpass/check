@@ -1,0 +1,13 @@
+#!/bin/env python3
+import sys
+from GithubCheck import check
+
+github = {
+    'author': "authpass",
+    'project': "authpass",
+    "suffix": "tar.gz",
+    "prefix": ""
+}
+
+if __name__ == "__main__":
+    sys.exit(check(github, "X86"))

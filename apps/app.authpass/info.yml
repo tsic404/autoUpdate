@@ -1,0 +1,21 @@
+appid: app.authpass
+id: 1075141
+
+binaryPacakge:
+  build:
+    type: binary
+    content: 
+      path: /
+    entries: 
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      AuthPass
+      Free and Open Source password manager for Android, iOS, MacOS, Linux and Windows. Compatible with KeePass.

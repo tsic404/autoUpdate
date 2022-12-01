@@ -1,0 +1,21 @@
+appid: cn.androidgoogle.studio
+id: 1007798
+
+binaryPacakge:
+  build:
+    type: binary
+    content: 
+      path: /
+    entries: 
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+       Android Studio
+       Android Studio provides the fastest tools for building apps on every type of Android device.
