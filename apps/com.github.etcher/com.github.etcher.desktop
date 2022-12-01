@@ -1,9 +1,9 @@
 [Desktop Entry]
 Name=balenaEtcher
-Exec=/opt/apps/com.github.etcher/files/balena-etcher-electron %U
+Exec=/opt/apps/com.github.etcher/files/balena-etcher %U
 Terminal=false
 Type=Application
-Icon=balena-etcher-electron
+Icon=balena-etcher
 StartupWMClass=balenaEtcher
 X-AppImage-Version=1.6.0
 Comment=Flash OS images to SD cards and USB drives, safely and easily.

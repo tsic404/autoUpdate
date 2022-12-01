@@ -3,10 +3,10 @@ import sys
 from GithubCheck import check
 
 github = {
-    'author': "nextcloud",
-    'project': "desktop",
-    "suffix": "x86_64.AppImage",
-    "prefix": ""
+    'author': "popcorn-official",
+    'project': "popcorn-desktop",
+    "suffix": "linux64.zip",
+    "prefix": "Popcorn-Time"
 }
 
 if __name__ == "__main__":
