@@ -1,0 +1,23 @@
+appid: com.leanote.leanote
+id: 1000653
+
+binaryPacakge:
+  build:
+    type: binary
+    content: 
+      path: /
+      fix:
+        - permission_fix
+    entries: 
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      Leanote, not just a notepad!
+      Use Electron(atom-shell) to create leanote desktop app.

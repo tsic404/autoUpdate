@@ -1,0 +1,21 @@
+appid: com.jetbrains.webstorm
+id: 1001651
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+         - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      WebStorm
+      The smartest JavaScript IDE.

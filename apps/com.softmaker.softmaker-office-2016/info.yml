@@ -1,0 +1,21 @@
+appid: com.softmaker.softmaker-office-2016
+id: 1001594
+
+binaryPacakge:
+  build:
+    type: binary
+    content: 
+      fix:
+        - content_fix
+    entries: 
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - desktops_fix
+      icons:
+        fix:
+          - icons_fix
+      mime:
+        path:
+          - /usr/share/mime/

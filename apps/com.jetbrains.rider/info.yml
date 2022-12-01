@@ -1,0 +1,21 @@
+appid: com.jetbrains.rider
+id: 1000833
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+         - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      Rider
+      Fast & powerful cross-platform .NET IDE.

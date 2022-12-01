@@ -1,0 +1,21 @@
+appid: com.jetbrains.pycharm-education
+id: 1017687
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+         - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      PyCharm
+      An educational IDE for Python

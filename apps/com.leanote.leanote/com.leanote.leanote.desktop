@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Leanote
+Name[zh]=蚂蚁笔记
+Exec=/opt/apps/com.leanote.leanote/files/Leanote
+Terminal=false
+Type=Application
+Icon=leanote
+GenericName=notepad
+Comment=Leanote, not just a notepad!
+Categories=office;

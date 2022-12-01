@@ -1,0 +1,21 @@
+appid: com.jetbrains.intellij-idea-ultimate
+id: 1007794
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+         - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      IntelliJ IDEA
+      Capable and Ergonmic IDE for JVM.

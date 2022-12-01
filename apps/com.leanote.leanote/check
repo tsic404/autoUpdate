@@ -1,0 +1,13 @@
+#!/bin/env python3
+import sys
+from GithubCheck import check
+
+github = {
+    'author': "leanote",
+    'project': "desktop-app",
+    "suffix": "",
+    "prefix": "leanote-desktop-linux-x64"
+}
+
+if __name__ == "__main__":
+    sys.exit(check(github, "X86"))
