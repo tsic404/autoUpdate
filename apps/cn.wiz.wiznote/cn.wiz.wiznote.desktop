@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=WizNote
+Name[zh_CN]=为知笔记
+Exec=/opt/apps/cn.wiz.wiznote/files/wiznote-desktop %U
+Terminal=false
+Type=Application
+Icon=wiznote
+StartupWMClass=WizNote
+Comment=WizNote is a powerful note-taking tool.
+Categories=Office;

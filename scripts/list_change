@@ -3,6 +3,7 @@
 from sys import argv
 from requests import get
 from os import environ, popen
+from subprocess import Popen, PIPE
 
 from GithubAction import setOutput
 
@@ -26,7 +27,10 @@ for file in files:
 
 updates = []
 for app in list(changed):
-    for res in popen("./apps/" + app + "/check").read().strip('\n').split('\n'):
+    ex = Popen("./apps/" + app + "/check", env=environ.copy(), shell=True, stdout=PIPE)
+    out, err = ex.communicate()
+    status = ex.wait()
+    for res in out.decode().strip('\n').split('\n'):
         arch, ver, url = res.strip('\n').split(' ')
         updates.append({
                     "arch": arch,

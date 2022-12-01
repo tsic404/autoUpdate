@@ -1,0 +1,21 @@
+appid: cn.wiz.wiznote
+id: 1000432
+
+binaryPacakge:
+  build:
+    type: binary
+    content: 
+      path: /
+    entries: 
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        path:
+          - /usr/share/icons
+
+debianInfo:
+  debian_patched:
+    Description: |
+      Unleash creativity with knowledge
+      Create a powerful knowledge graph - from personal notes to team wiki

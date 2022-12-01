@@ -1,0 +1,14 @@
+#!/bin/env python3
+
+from requests import get
+from re import search
+
+
+def check():
+    d_url = r"https://redirector.gvt1.com/edgedl/android/studio/ide-zips/(.*)/android-studio-(.*)-linux.tar.gz"
+    res = get("https://developer.android.google.cn/studio").text
+    res = search(d_url, res)
+    print("X86", res.groups()[1], res.group())
+
+if __name__ =="__main__":
+    check()

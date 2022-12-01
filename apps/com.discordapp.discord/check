@@ -1,0 +1,12 @@
+#!/bin/env python3
+from requests import get
+from re import search
+
+def check():
+    url = "https://discord.com/api/download?platform=linux&format=deb"
+    url = get(url, stream=True, allow_redirects=False).headers['location']
+    ver = search(r'discord-(.*?).deb', url)[1]
+    print("X86", "1:" + ver, url)
+
+if __name__ == "__main__":
+    SystemExit(check())

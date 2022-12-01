@@ -1,0 +1,17 @@
+appid: com.discordapp.discord
+id: 1000549
+
+binaryPacakge:
+  build:
+    type: deb
+    content:
+      path: /usr/share/discord
+      fix:
+        - patch_version
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+         - icons_fix
