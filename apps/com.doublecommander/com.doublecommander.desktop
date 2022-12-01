@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Double Commander
+Exec=/opt/apps/com.doublecommander/files/doublecmd.sh
+Terminal=false
+Type=Application
+Icon=doublecmd
+Categories=Development;
