@@ -41,7 +41,7 @@ def check(appid: str, appstore: Appstore):
             res = out.decode()
             count += 1
             sleep(20)
-        for archinfo in res.split('\n'):
+        for archinfo in res.strip('\n').split('\n'):
             arch, ver, url= archinfo.strip('\n').split(' ')
             
             # check app in store version
