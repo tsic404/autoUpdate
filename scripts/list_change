@@ -19,28 +19,32 @@ headers = {
 page = 1
 url = "https://api.github.com/repos/tsic404/autoUpdate/pulls/" + str(pr_no) + "/files?per_page=100&page="
 files = get(url = url + str(page), headers=headers).json()
-while len(files) == 100:
+while True:
+    files = get(url = url + str(page), headers=headers).json()
     for file in files:
         filename = file.get('filename')
         if filename.startswith('apps'):
             app = filename.split('/')[1]
             changed.add(app)
+    if len(files) != 100:
+        break
     page += 1
-    files = get(url = url + str(page), headers=headers).json()
+    
 
 updates = []
 for app in list(changed):
-    ex = Popen("./apps/" + app + "/check", env=environ.copy(), shell=True, stdout=PIPE)
-    out, err = ex.communicate()
-    status = ex.wait()
-    for res in out.decode().strip('\n').split('\n'):
-        arch, ver, url = res.strip('\n').split(' ')
-        updates.append({
-                    "arch": arch,
-                    "appid": app,
-                    "version": ver,
-                    "url": url,
-        })
+    print(app)
+    # ex = Popen("./apps/" + app + "/check", env=environ.copy(), shell=True, stdout=PIPE)
+    # out, err = ex.communicate()
+    # status = ex.wait()
+    # for res in out.decode().strip('\n').split('\n'):
+    #     arch, ver, url = res.strip('\n').split(' ')
+    #     updates.append({
+    #                 "arch": arch,
+    #                 "appid": app,
+    #                 "version": ver,
+    #                 "url": url,
+    #     })
 
 setOutput("CHANGED", str({"payload": updates}))
 
