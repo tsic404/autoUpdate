@@ -1,0 +1,13 @@
+#!/bin/env python3
+import sys
+from GithubCheck import check
+
+github = {
+    'author': "nextcloud",
+    'project': "desktop",
+    "suffix": "x86_64.AppImage",
+    "prefix": ""
+}
+
+if __name__ == "__main__":
+    sys.exit(check(github, "X86"))

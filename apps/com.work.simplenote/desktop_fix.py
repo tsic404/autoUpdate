@@ -1,4 +1,4 @@
-from os import makedirs, popen
+from os import popen
 from shutil import copyfile
 
 def do_extra(app):

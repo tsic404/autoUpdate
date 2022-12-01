@@ -1,0 +1,25 @@
+appid: github.mavlink.qgroundcontrol
+id: 1070446
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+    debian_patched:
+        Description: |
+          QGroundControl (QGC) is an intuitive and powerful ground control station (GCS) for UAVs.
+          The primary goal of QGC is ease of use for both first time and professional users.
+          It provides full flight control and mission planning for any MAVLink enabled drone,
+          and vehicle setup for both PX4 and ArduPilot powered UAVs. Instructions for using
+          QGroundControl are provided in the User Manual (you may not need them because the
+          UI is very intuitive!)
