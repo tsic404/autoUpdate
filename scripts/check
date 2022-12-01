@@ -33,14 +33,13 @@ def check(appid: str, appstore: Appstore):
         # check upstream version
         res = None
         count = 0
-        status = -1
-        while status != 0 and not res and count < 10:
+        while not res and count < 10:
             ex = Popen(check_bin_path, env=environ.copy(), shell=True, stdout=PIPE)
             out, err = ex.communicate()
             status = ex.wait()
             res = out.decode()
             count += 1
-            print("failed get info for " + appid + " " + count + " times")
+            print("failed get info for " + appid + " " + str(count) + " times")
             sleep(20)
         for archinfo in res.strip('\n').split('\n'):
             arch, ver, url= archinfo.strip('\n').split(' ')
@@ -60,13 +59,8 @@ def check(appid: str, appstore: Appstore):
 def main():
     appstore = Appstore(environ['APPUSERNAME'], environ['APPPASSWORD'])
     apps = listApps()
-    threads = list()
     for app in apps:
-        threads.append(Thread(target=check(appid=app, appstore=appstore),name=app))
-
-    for thread in threads:
-        thread.start()
-        thread.join()
+        check(appid=app, appstore=appstore)
 
     if len(need_updates.get("payload", [])) > 0:
         setOutput("UPDATES", str(need_updates))

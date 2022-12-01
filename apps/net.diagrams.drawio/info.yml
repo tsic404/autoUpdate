@@ -1,0 +1,26 @@
+appid: net.diagrams.drawio
+id: 1012956
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        path:
+          - /usr/share/icons/
+      mime:
+        path:
+          - /usr/share/mime/
+
+debianInfo:
+    debian_patched:
+        Description: |
+           diagrams.net
+           Security-first diagramming for teams.
+           Bring your storage to our online tool,
+           or go max privacy with the desktop app.
