@@ -59,13 +59,8 @@ def check(appid: str, appstore: Appstore):
 def main():
     appstore = Appstore(environ['APPUSERNAME'], environ['APPPASSWORD'])
     apps = listApps()
-    threads = list()
     for app in apps:
-        threads.append(Thread(target=check(appid=app, appstore=appstore),name=app))
-
-    for thread in threads:
-        thread.start()
-        thread.join()
+        check(appid=app, appstore=appstore)
 
     if len(need_updates.get("payload", [])) > 0:
         setOutput("UPDATES", str(need_updates))

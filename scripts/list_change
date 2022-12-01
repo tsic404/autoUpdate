@@ -2,7 +2,8 @@
 
 from sys import argv
 from requests import get
-from os import environ, popen
+from os import environ
+from os.path import exists
 from subprocess import Popen, PIPE
 
 from GithubAction import setOutput
@@ -32,6 +33,8 @@ while True:
 
 updates = []
 for app in list(changed):
+    if not exists("apps/" + app + "/check"):
+        continue
     ex = Popen("./apps/" + app + "/check", env=environ.copy(), shell=True, stdout=PIPE)
     out, err = ex.communicate()
     status = ex.wait()

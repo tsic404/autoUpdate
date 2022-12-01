@@ -120,7 +120,7 @@ class Appstore:
                 appid, arch, oldVer = self.getVersion(appid=appid, arch=arch, systemStr=systemStr)
             except:
                 count += 1
-                sleep(30)
+                sleep(10)
         if oldVer is None:
             raise BaseException("failed to get ver info from app store")
         # new ver is more than old ver
