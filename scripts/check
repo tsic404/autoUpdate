@@ -8,6 +8,7 @@ from os.path import abspath, join, split, split
 from os import listdir, popen, environ
 from yaml import safe_load
 from time import sleep
+from subprocess import Popen, PIPE
 
 from GithubAction import setOutput
 from AppstoreCheck import Appstore
@@ -32,8 +33,11 @@ def check(appid: str, appstore: Appstore):
         # check upstream version
         res = None
         count = 0
-        while not res and count < 10:
-            res = popen(cmd=check_bin_path).read().strip('\n')
+        while status == 0 and res and count < 10:
+            ex = Popen(check_bin_path, env=environ.copy(), shell=True, stdout=PIPE)
+            out, err = ex.communicate()
+            status = ex.wait()
+            res = out.decode()
             count += 1
             sleep(20)
         for archinfo in res.split('\n'):
