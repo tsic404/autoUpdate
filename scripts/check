@@ -33,7 +33,8 @@ def check(appid: str, appstore: Appstore):
         # check upstream version
         res = None
         count = 0
-        while status == 0 and res and count < 10:
+        status = 0
+        while status != 0 and res and count < 10:
             ex = Popen(check_bin_path, env=environ.copy(), shell=True, stdout=PIPE)
             out, err = ex.communicate()
             status = ex.wait()
