@@ -1,0 +1,17 @@
+appid: github.foundry376.mailspring
+id: 1000641
+
+binaryPacakge:
+  build:
+    type: deb
+    content:
+      path: /usr/share/mailspring/
+    entries:
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        path:
+          - /usr/share/icons/
