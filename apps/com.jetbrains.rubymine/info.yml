@@ -1,0 +1,21 @@
+appid: com.jetbrains.rubymine
+id: 1009145
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+         - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      RubyMine
+      The Most Intelligent Ruby and Rails IDE.

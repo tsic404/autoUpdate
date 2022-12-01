@@ -1,0 +1,13 @@
+#!/bin/env python3
+import sys
+
+from requests import get
+
+def check():
+        url = "https://dl.pstmn.io/api/version/latest?platform=linux64&channel=stable"
+        res_json = get(url).json()
+        url = "https://dl.pstmn.io/download/latest/linux64"
+        print("X86", res_json['version'], url )
+
+if __name__ == "__main__":
+    sys.exit(check())

@@ -16,14 +16,17 @@ headers = {
     "Authorization": "Bearer " + github_token
 }
 
-url = "https://api.github.com/repos/tsic404/autoUpdate/pulls/" + str(pr_no) + "/files"
-
-files = get(url = url, headers=headers).json()
-for file in files:
-    filename = file.get('filename')
-    if filename.startswith('apps'):
-        app = filename.split('/')[1]
-        changed.add(app)
+page = 1
+url = "https://api.github.com/repos/tsic404/autoUpdate/pulls/" + str(pr_no) + "/files?per_page=100&page="
+files = get(url = url + str(page), headers=headers).json()
+while len(files) == 100:
+    for file in files:
+        filename = file.get('filename')
+        if filename.startswith('apps'):
+            app = filename.split('/')[1]
+            changed.add(app)
+    page += 1
+    files = get(url = url + str(page), headers=headers).json()
 
 updates = []
 for app in list(changed):

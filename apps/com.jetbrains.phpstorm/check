@@ -1,0 +1,12 @@
+#!/bin/env python3
+from requests import get
+
+def main():
+    code = "PS"
+    url = "https://data.services.jetbrains.com/products/releases?" \
+          "code={code}&latest=true&type=release".replace("{code}", code)
+    res_json = get(url).json()
+    print("X86", res_json[code][0]['version'], res_json[code][0]['downloads']['linux']['link'])
+
+
+main()

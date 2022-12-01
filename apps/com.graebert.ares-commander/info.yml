@@ -1,0 +1,22 @@
+appid: com.graebert.ares-commander
+id: 1069258
+
+binaryPacakge:
+  build:
+    type: deb
+    content: 
+      fix:
+        - content_fix
+        - udev_fix
+        - help_fix
+        - data_fix
+    entries: 
+      applications:
+        fix:
+          - desktops_fix
+      icons:
+        fix:
+          - icons_fix
+      mime:
+        fix:
+          - mime_fix

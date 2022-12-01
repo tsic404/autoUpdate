@@ -1,0 +1,13 @@
+#!/bin/env python3
+import sys
+from requests import get
+from re import search
+
+def check():
+        url = "https://www.realvnc.com/en/connect/download/viewer/linux/"
+        text = get(url).text
+        res = search(r"/download/file/viewer.files/VNC-Viewer-(.*)-Linux-x64.deb", text)
+        print("X86", res.groups()[0], "https://www.realvnc.com" + res.group())
+
+if __name__ == "__main__":
+    sys.exit(check())

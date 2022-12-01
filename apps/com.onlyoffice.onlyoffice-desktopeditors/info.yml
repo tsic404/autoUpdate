@@ -1,0 +1,23 @@
+appid: com.onlyoffice.onlyoffice-desktopeditors
+id: 1003015
+
+binaryPacakge:
+  build:
+    type: binary
+    content: 
+      path: /usr
+    entries: 
+      applications:
+        path: 
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        path:
+          - /usr/share/icons/
+
+debianInfo:
+  debian_patched:
+    Description: |
+      ONLYOFFICE
+      Run your private office with the ONLYOFFICE.Secure office and productivity apps.

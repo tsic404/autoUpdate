@@ -1,0 +1,14 @@
+#!/bin/env python3
+import sys
+from requests import get
+from re import search
+
+def check():
+        url = "https://www.softmaker.com/en/softmaker-office-download"
+        text = get(url).text
+        deb = "https://www.softmaker.net/down/softmaker-office-(.*)_amd64.deb"
+        res = search(deb, text)
+        print("X86", res.groups()[0], res.group())
+
+if __name__ == "__main__":
+    sys.exit(check())
