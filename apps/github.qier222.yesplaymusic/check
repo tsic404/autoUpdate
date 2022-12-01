@@ -1,0 +1,13 @@
+#!/bin/env python3
+import sys
+from GithubCheck import check
+
+github = {
+    'author': "qier222",
+    'project': "YesPlayMusic",
+    "suffix": "AppImage",
+    "prefix": ""
+}
+
+if __name__ == "__main__":
+    sys.exit(check(github, "X86"))

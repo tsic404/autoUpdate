@@ -1,0 +1,17 @@
+appid: io.webtorrent.webtorrent
+id: 1000612
+
+binaryPacakge:
+  build:
+    type: deb
+    content:
+      path: /usr
+    entries:
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        path:
+          - /usr/share/icons/

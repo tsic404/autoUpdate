@@ -1,0 +1,23 @@
+appid: github.troyeguo.koodo-reader
+id: 1070124
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktops_fix
+      icons:
+        path:
+          - /usr/share/icons/
+      mime:
+        path:
+          - /usr/share/mime/
+
+debianInfo:
+    debian_patched:
+        Description: |
+           A cross-platform ebook reader.

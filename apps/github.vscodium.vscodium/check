@@ -1,0 +1,13 @@
+#!/bin/env python3
+import sys
+from GithubCheck import check
+
+github = {
+    'author': "VSCodium",
+    'project': "vscodium",
+    "suffix": "amd64.deb",
+    "prefix": ""
+}
+
+if __name__ == "__main__":
+    sys.exit(check(github, "X86"))
