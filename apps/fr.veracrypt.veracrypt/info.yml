@@ -1,0 +1,17 @@
+appid: fr.veracrypt.veracrypt
+id: 1001157
+
+binaryPacakge:
+  build:
+    type: deb
+    content:
+      path: /usr/
+    entries:
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        path:
+          - /usr/share/pixmaps/

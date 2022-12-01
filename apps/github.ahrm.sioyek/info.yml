@@ -1,0 +1,23 @@
+appid: github.ahrm.sioyek
+id: 1016300
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /usr
+    entries:
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+    debian_patched:
+        Description: |
+          Sioyek
+          Sioyek is a PDF viewer designed for reading research papers and technical books.

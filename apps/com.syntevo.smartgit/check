@@ -1,0 +1,14 @@
+#!/bin/env python3
+import sys
+import requests
+from re import search
+
+def main():
+    url = "https://www.syntevo.com/smartgit/download"
+    d_url = "smartgit-linux-(.*).tar.gz"
+    text = requests.get(url).text
+    res =  search(d_url, text)
+    print('X86', res.groups()[0].replace('_', '.'), "https://www.syntevo.com/downloads/smartgit/" + res.group())
+
+if __name__ == "__main__":
+    sys.exit(main())

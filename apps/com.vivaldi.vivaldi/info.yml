@@ -1,0 +1,17 @@
+appid: com.vivaldi.vivaldi
+id: 1000458
+
+binaryPacakge:
+  build:
+    type: deb
+    content:
+      path: /opt/vivaldi/
+    entries:
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        fix:
+          - icons_fix
