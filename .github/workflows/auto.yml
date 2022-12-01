@@ -13,6 +13,7 @@ env:
   APPUSERNAME: ${{ secrets.APP_DEV_USERNAME }}
   APPPASSWORD: ${{ secrets.APP_DEV_PASSWORD }}
   PYTHONPATH: ${{ github.workspace }}/lib
+  GITHUB_TOKEN: ${{ github.token }}
 
 jobs:  
   check:
