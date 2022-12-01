@@ -1,0 +1,23 @@
+appid: com.github.moonplayer
+id: 1000473
+
+binaryPacakge:
+  build:
+    type: binary
+    content: 
+      path: /
+    entries: 
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        path:
+          - /usr/share/icons/
+
+debianInfo:
+  debian_patched:
+    Description: |
+      Description: MoonPlayer
+      MoonPlayer is an interesting player that lets you to enjoy videos. It can play the video online, download it or just open the local videos.

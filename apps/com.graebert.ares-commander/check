@@ -1,0 +1,13 @@
+#!/bin/env python3
+import sys
+import requests
+from re import search
+
+def main():
+    url = "https://www.graebert.com/cad-software/download/ares-commander/linux/deb/latest"
+    url = requests.get(url, stream=True, allow_redirects=False).headers['Location']
+    ver = search(r'ARES-Commander-(.*?)-(.*?)-(.*?).deb', url)[2]
+    print('X86', ver, url)
+
+if __name__ == "__main__":
+    sys.exit(main())

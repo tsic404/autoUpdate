@@ -1,0 +1,21 @@
+appid: com.sweethome3d
+id: 1000519
+
+binaryPacakge:
+  build:
+    type: binary
+    content: 
+      path: /
+    entries: 
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      Sweet Home 3D is a free interior design application
+      that helps you draw the plan of your house, arrange furniture on it and visit the results in 3D.

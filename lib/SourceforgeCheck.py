@@ -13,5 +13,6 @@ def check(sourceforge):
     dl_url = "https://sourceforge.net/projects/" + project_name + "/files" + filename + "/download"
     dl_url = get(dl_url, stream=True, allow_redirects=False).headers['Location']
     ver = search(d_filename, os.path.basename(filename)).groups()[0]
+    dl_url = dl_url.split('?')[0]
 
     print(sourceforge['arch'], ver, dl_url)

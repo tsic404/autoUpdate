@@ -1,0 +1,22 @@
+appid: com.realvnc.viewer
+id: 1000557
+
+binaryPacakge:
+  build:
+    type: deb
+    content: 
+      path: /usr
+    entries:
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        path:
+          - /usr/share/icons/
+        fix:
+          - icons_fix
+      mime:
+        path:
+          - /usr/share/mime/

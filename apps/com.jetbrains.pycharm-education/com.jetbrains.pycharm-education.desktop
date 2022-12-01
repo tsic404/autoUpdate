@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=PyCharm Edu
+Icon=com.jetbrains.pycharm-education
+Exec=/opt/apps/com.jetbrains.pycharm-education/files/bin/pycharm.sh %u
+Categories=Development;IDE;
+StartupWMClass=jetbrains-pycharm-edu
+Comment=An educational IDE for Python.
+StartupNotify=true
+Terminal=false

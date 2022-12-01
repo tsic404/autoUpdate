@@ -1,0 +1,21 @@
+appid: com.jetbrains.phpstorm
+id: 1010924
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+         - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      PhpStrom
+      The Lightning-Smart PHP IDE.

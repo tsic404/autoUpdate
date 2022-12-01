@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=WebStorm
+Icon=com.jetbrains.webstorm
+Exec=/opt/apps/com.jetbrains.webstorm/files/bin/webstorm.sh %u
+Categories=Development;IDE;
+StartupWMClass=jetbrains-webstorm
+Comment=The smartest JavaScript IDE.
+StartupNotify=true
+Terminal=false

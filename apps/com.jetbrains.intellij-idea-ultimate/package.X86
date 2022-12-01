@@ -1,0 +1,17 @@
+#!/bin/env python3
+
+from sys import argv
+from os.path import dirname, abspath, join
+from BinaryPackage import BinaryPackage
+
+if len(argv) < 2:
+    exit(-1)
+
+EXTRACT_DIR = argv[1]
+VERSION     = argv[2]
+
+BinaryPackage(originContent=EXTRACT_DIR,
+            version=VERSION,
+            arch = "amd64",
+            app_conf_path = join(dirname(abspath(__file__)),"info.yml")
+).run()
