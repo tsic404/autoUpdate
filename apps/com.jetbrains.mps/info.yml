@@ -1,0 +1,21 @@
+appid: com.jetbrains.mps
+id: 1026426
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+         - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      Meta Programming System
+      Create your own domain-specific language.

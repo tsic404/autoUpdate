@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=MPS
+Icon=com.jetbrains.mps
+Exec=/opt/apps/com.jetbrains.mps/files/bin/mps.sh %u
+Categories=Development;IDE;
+StartupWMClass=jetbrains-mps
+Comment=An IDE for DSL development.
+StartupNotify=true
+Terminal=false
