@@ -1,0 +1,19 @@
+appid: github.Automattic.simplenote-electron
+id: 1002075
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        path:
+          - /usr/share/icons/
+
+debianInfo:
+    debian_patched:
+        Description: A Simplenote React client packaged in Electron. Learn more about Simplenote at Simplenote.com.

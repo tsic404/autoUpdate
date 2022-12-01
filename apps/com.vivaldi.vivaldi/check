@@ -1,0 +1,12 @@
+#!/bin/env python3
+from requests import get
+from re import search
+
+def main():
+    url = "https://vivaldi.com/zh-hans/download/"
+    text = get(url).text
+    res = search(r"https://downloads.vivaldi.com/stable/vivaldi-stable_(.*?)_amd64.deb", text)
+    print('X86', res.groups()[0], res.group())
+
+if __name__ == "__main__":
+    SystemExit(main())

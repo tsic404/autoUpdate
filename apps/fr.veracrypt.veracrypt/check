@@ -1,0 +1,14 @@
+#!/bin/env python3
+from requests import get
+from re import search
+
+def main():
+    url = "https://www.veracrypt.fr/en/Downloads.html"
+    text = get(url).text
+    
+    res = search(r"veracrypt-(.*)-Debian-10-amd64.deb", text)
+    deb, ver = res.group(), res.groups()[0]
+    print('X86' ,ver ,search(r"https://(.*)"+deb, text).group().replace("&#43;", "+"))
+
+if __name__ == "__main__":
+    SystemExit(main())

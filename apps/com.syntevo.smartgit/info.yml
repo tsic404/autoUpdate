@@ -1,0 +1,24 @@
+appid: com.syntevo.smartgit
+id: 1001940
+
+binaryPacakge:
+  build:
+    type: binary
+    content: 
+      path: /
+    entries: 
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+  debian_patched:
+    Description: |
+      Get your commit done.
+      SmartGit is the most popular Git GUI client at slant.co.
+      100,000+ developers around the world trust in SmartGit.
+      SmartGit supports GitHub, Bitbucket, GitLab and Azure DevOps.
+

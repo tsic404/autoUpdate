@@ -1,0 +1,21 @@
+appid: github.fndroid.cfw
+id: 1026224
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktop_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+    debian_patched:
+        Description: |
+          Clash for Windows
+          A Windows/macOS/Linux GUI based on Clash and Electron.
