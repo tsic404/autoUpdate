@@ -29,22 +29,19 @@ while True:
     if len(files) != 100:
         break
     page += 1
-    
 
 updates = []
 for app in list(changed):
-    print(app)
-    # ex = Popen("./apps/" + app + "/check", env=environ.copy(), shell=True, stdout=PIPE)
-    # out, err = ex.communicate()
-    # status = ex.wait()
-    # for res in out.decode().strip('\n').split('\n'):
-    #     arch, ver, url = res.strip('\n').split(' ')
-    #     updates.append({
-    #                 "arch": arch,
-    #                 "appid": app,
-    #                 "version": ver,
-    #                 "url": url,
-    #     })
+    ex = Popen("./apps/" + app + "/check", env=environ.copy(), shell=True, stdout=PIPE)
+    out, err = ex.communicate()
+    status = ex.wait()
+    for res in out.decode().strip('\n').split('\n'):
+        arch, ver, url = res.strip('\n').split(' ')
+        updates.append({
+                    "arch": arch,
+                    "appid": app,
+                    "version": ver,
+                    "url": url,
+        })
 
 setOutput("CHANGED", str({"payload": updates}))
-
