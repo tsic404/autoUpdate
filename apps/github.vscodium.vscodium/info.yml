@@ -1,0 +1,24 @@
+appid: github.vscodium.vscodium
+id: 1070901
+
+binaryPacakge:
+  build:
+    type: deb
+    content:
+      path: /usr/share/
+      fix:
+        - code_fix
+        - auto_complete
+    entries:
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        fix:
+         - icons_fix
+
+      mime:
+        path:
+          - /usr/share/mime

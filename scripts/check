@@ -40,10 +40,11 @@ def check(appid: str, appstore: Appstore):
             status = ex.wait()
             res = out.decode()
             count += 1
+            print("failed get info for " + appid + " " + count + " times")
             sleep(20)
         for archinfo in res.strip('\n').split('\n'):
             arch, ver, url= archinfo.strip('\n').split(' ')
-            
+
             # check app in store version
             if(appstore.isNeedUpdate(app_info.get('id'), ver, arch)):
                 need_updates.get("payload").append({

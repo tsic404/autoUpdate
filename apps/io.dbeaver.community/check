@@ -1,0 +1,13 @@
+#!/bin/env python3
+import sys
+from GithubCheck import check
+
+github = {
+    'author': "dbeaver",
+    'project': "dbeaver",
+    "suffix": "linux.gtk.x86_64.tar.gz",
+    "prefix": ""
+}
+
+if __name__ == "__main__":
+    sys.exit(check(github, "X86"))

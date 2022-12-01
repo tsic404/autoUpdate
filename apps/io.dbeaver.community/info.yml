@@ -1,0 +1,21 @@
+appid: io.dbeaver.community
+id: 1011735
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktops_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+    debian_patched:
+        Description: |
+          DBeaver Community
+          Free Universal Database Tool.

@@ -1,0 +1,20 @@
+appid: io.github.guiscrcpy
+id: 1004252
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktops_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+    debian_patched:
+        Description: |
+          A simple, pluggable, graphical user interface for the fastest Android screen mirroring software.
