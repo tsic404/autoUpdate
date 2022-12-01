@@ -1,0 +1,23 @@
+appid: net.sourceforge.veyon-master
+id: 1001899
+
+binaryPacakge:
+  build:
+    type: deb
+    content:
+      path: /usr/
+      fix:
+        - ldpath_fix
+        - service_fix
+    entries:
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        path:
+          - /usr/share/icons/
+      polkit:
+        fix:
+          - polkit_fix

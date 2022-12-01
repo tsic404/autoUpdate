@@ -1,0 +1,22 @@
+appid: net.supertuxkart
+id: 1007776
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        fix:
+          - desktops_fix
+      icons:
+        fix:
+          - icons_fix
+
+debianInfo:
+    debian_patched:
+        Description: |
+           SuperTuxKart is a free kart racing game.
+           It focuses on fun and not on realistic kart physics.
+           Instructions can be found on the in-game help page.

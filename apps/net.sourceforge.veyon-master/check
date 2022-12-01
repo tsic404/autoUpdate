@@ -3,9 +3,9 @@ import sys
 from GithubCheck import check
 
 github = {
-    'author': "Automattic",
-    'project': "simplenote-electron",
-    "suffix": "x86_64.AppImage",
+    'author': "veyon",
+    'project': "veyon",
+    "suffix": "debian-buster_amd64.deb",
     "prefix": ""
 }
 
