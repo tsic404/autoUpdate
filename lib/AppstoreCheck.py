@@ -185,16 +185,16 @@ class Appstore:
         upload = driver.find_element(by=By.XPATH, value=upload_xpath)
         upload.send_keys(file)
         press('enter')
-        press('enter')
         sleep(5)
         
         # begin upload
         staus_xpth =  "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[3]/div[1]/div[2]/div/div[3]/table/tbody/tr/td[4]/div/div/div/div[2]"
-        process_bar = WebDriverWait(driver=driver, timeout=12).until(
+        process_bar = WebDriverWait(driver=driver, timeout=20).until(
             EC.element_to_be_clickable((By.XPATH, staus_xpth))
         )
         
         while process_bar.text != "100%":
+            print(process_bar.text)
             sleep(5)
 
         developer_name_xpath="/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[3]/div/div[2]/div/div[2]/div[1]/div[7]/div/div/input"
