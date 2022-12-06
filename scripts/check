@@ -39,6 +39,7 @@ def check(appid: str, appstore: Appstore):
             status = ex.wait()
             res = out.decode()
             count += 1
+            if res: continue
             print("failed get info for " + appid + " " + str(count) + " times")
             sleep(20)
         for archinfo in res.strip('\n').split('\n'):
