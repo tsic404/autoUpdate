@@ -89,6 +89,20 @@ class Appstore:
                     if i.get('pkgArch').__eq__(arch):
                         return(i['pkg_name'], i['pkgArch'], i['pkg_version'])
         raise BaseException("failed to get ver info from app store")
+    
+    def __getappDetial(self, appid):
+        self.__check()
+        detail_url = "https://appstore-dev.uniontech.com/devprod-api/store-dev-app/app/{id}/detail".format(id=id)
+        res = get(url=detail_url, headers=headers, cookies=self.cookies).json()
+        return res.get("datas", {})
+    
+    def __getappUpdateButton(self, appid, arch):
+        "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[3]/div[1]/div[2]/div/div[3]/table/tbody/tr/td[9]/div/button[2]"
+        self.__check()
+        appDetial = self.__getappDetial(appid=appid)
+        for pkg in appDetial.get("app_origin_pkgs"):
+            pass
+        pass
 
     def get_all_systemStr(self, app_id: str):
         self.__check()
@@ -130,9 +144,8 @@ class Appstore:
 
     def uploadUpdate(self, appid: str, file: str):
 
-        # login
         ops = webdriver.ChromeOptions()
-        ops.add_argument("--headless")
+        #ops.add_argument("--headless")
 
         login_url = "https://appstore-dev.uniontech.com/"
         driver = webdriver.Chrome(options=ops)
@@ -158,16 +171,12 @@ class Appstore:
             self.cookies = cookies
 
         info = self.__search(appid=appid)
-        
-        # open app detail in update mode
-        upload_page_url = "https://appstore-dev.uniontech.com/#/management-detial?id={id}&type=1&app_id={appid}".format(id=info.get("id"), appid=appid)
 
-        # ops = webdriver.ChromeOptions()
-        # ops.add_argument("--headless")
+        upload_page_url = "https://appstore-dev.uniontech.com/#/management-detial?id={id}&type=1&app_id={appid}".format(id=info.get("id"), appid=appid)
 
         driver.get(upload_page_url)
         sleep(3)
-        
+
         update_button_xpath = "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[3]/div[1]/div[2]/div/div[3]/table/tbody/tr/td[9]/div/button[2]"
         update_button = driver.find_element(by=By.XPATH, value=update_button_xpath)
         update_button.click()
@@ -187,13 +196,12 @@ class Appstore:
         
         while process_bar.text != "100%":
             sleep(5)
-        
-        
-        # developer_name_xpath="/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[3]/div/div[2]/div/div[2]/div[1]/div[7]/div/div/input"
-        # developer_name_input = driver.find_element(by=By.XPATH, value=developer_name_xpath)
-        # developer_name_input.clear()
-        # developer_name_input.send_keys(developer_name)
-        
+
+        developer_name_xpath="/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[3]/div/div[2]/div/div[2]/div[1]/div[7]/div/div/input"
+        developer_name_input = driver.find_element(by=By.XPATH, value=developer_name_xpath)
+        developer_name_input.clear()
+        developer_name_input.send_keys("开源社区中心")
+
         # submit upload
         submit = WebDriverWait(driver=driver, timeout=12).until(
             EC.element_to_be_clickable((By.XPATH, "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/div[1]/button[3]"))
