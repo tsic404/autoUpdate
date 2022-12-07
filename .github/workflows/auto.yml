@@ -49,6 +49,7 @@ jobs:
   build:
     if: ${{ needs.check.outputs.UPDATES != '' }}
     strategy:
+      max-parallel: 1
       matrix: ${{ fromJson(needs.check.outputs.UPDATES) }}
     needs: check
     uses: tsic404/autoUpdate/.github/workflows/build.yml@master
