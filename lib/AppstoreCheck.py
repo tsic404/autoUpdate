@@ -125,7 +125,7 @@ class Appstore:
         if arch.__eq__("amd64"): arch = "X86"
         arch = arch.upper()
         appid, arch, ver = self.__getAppVersion(id=str(info.get("id")), systemStr=systemStr, arch=arch)
-        return (appid, arch,ver)
+        return (appid, arch, ver)
     
     def isNeedUpdate(self, appid: str, newVer: str, arch: str = "X86", systemStr: str = "社区版"):
         oldVer = None
