@@ -189,7 +189,7 @@ class Appstore:
         
         # begin upload
         staus_xpth =  "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[3]/div[1]/div[2]/div/div[3]/table/tbody/tr/td[4]/div/div/div/div[2]"
-        process_bar = WebDriverWait(driver=driver, timeout=20).until(
+        process_bar = WebDriverWait(driver=driver, timeout=120).until(
             EC.element_to_be_clickable((By.XPATH, staus_xpth))
         )
         
