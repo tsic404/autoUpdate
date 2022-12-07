@@ -173,6 +173,7 @@ class Appstore:
             self.cookies = cookies
 
         info = self.__search(appid=appid)
+        print(info)
         if (info.get("status", 0) == 52):
             revoke_api = "https://appstore-dev.uniontech.com/devprod-api/store-dev-app/app/{id}/revoke".format(id=info.get("id"))
             res = delete(url=revoke_api,cookies=self.cookies, headers=headers).json()
