@@ -204,8 +204,8 @@ class Appstore:
                 sleep(5)
         except TimeoutException:
             size = getsize(file)
-            sleep(size / 300)
-            print("failed to get upload process bar, sleep " + str(size / 300))
+            sleep(int(size / 350000))
+            print("failed to get upload process bar, sleep " + str(int(size / 350000)))
 
         developer_name_xpath="/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[3]/div/div[2]/div/div[2]/div[1]/div[7]/div/div/input"
         developer_name_input = driver.find_element(by=By.XPATH, value=developer_name_xpath)
