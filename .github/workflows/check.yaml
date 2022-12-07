@@ -6,8 +6,8 @@ on:
       "apps/**"
 
 concurrency:
-  group: ${{ github.workflow }}-pull/${{ github.event.number }}
-  cancel-in-progress: true
+  group: build-app
+  cancel-in-progress: false
 
 env:
   PYTHONPATH: ${{ github.workspace }}/lib

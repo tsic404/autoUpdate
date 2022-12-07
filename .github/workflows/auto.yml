@@ -6,7 +6,7 @@ on:
     - cron:  '0 */4 * * *'
 
 concurrency:
-  group: ${{ github.workflow }}
+  group: build-app
   cancel-in-progress: true
 
 env:
