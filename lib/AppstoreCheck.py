@@ -1,16 +1,17 @@
 #!/bin/env python3
 
 from time import sleep
+from os.path import getsize
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from requests import get
 from subprocess import run
 from pyautogui import press
-from requests import post
+from requests import delete
 
 headers = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,"
@@ -172,22 +173,20 @@ class Appstore:
             self.cookies = cookies
 
         info = self.__search(appid=appid)
-
-        upload_page_url = "https://appstore-dev.uniontech.com/#/management-detial?id={id}&type=1&app_id={appid}".format(id=info.get("id"), appid=appid)
-        
-        if (info.get("status", "").__eq__("52")):
+        if (info.get("status", 0) == 52):
             revoke_api = "https://appstore-dev.uniontech.com/devprod-api/store-dev-app/app/{id}/revoke".format(id=info.get("id"))
-            res = post(url=revoke_api,cookies=self.cookies, headers=headers).json()
+            res = delete(url=revoke_api,cookies=self.cookies, headers=headers).json()
             if res.get("status"):
                 print(res.get("desc"))
 
+        upload_page_url = "https://appstore-dev.uniontech.com/#/management-detial?id={id}&type=1&app_id={appid}".format(id=info.get("id"), appid=appid)
         driver.get(upload_page_url)
         sleep(3)
 
         update_button_xpath = "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[3]/div[1]/div[2]/div/div[3]/table/tbody/tr/td[9]/div/button[2]"
         update_button = driver.find_element(by=By.XPATH, value=update_button_xpath)
         update_button.click()
-        
+
         upload_xpath = "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[3]/div[2]/div/label/input"
         upload = driver.find_element(by=By.XPATH, value=upload_xpath)
         upload.send_keys(file)
@@ -195,14 +194,18 @@ class Appstore:
         sleep(5)
         
         # begin upload
-        staus_xpth =  "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[3]/div[1]/div[2]/div/div[3]/table/tbody/tr/td[4]/div/div/div/div[2]"
-        process_bar = WebDriverWait(driver=driver, timeout=300).until(
-            EC.element_to_be_clickable((By.XPATH, staus_xpth))
-        )
-        
-        while process_bar.text != "100%":
-            print(process_bar.text)
-            sleep(5)
+        try:
+            staus_xpth =  "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[3]/div[1]/div[2]/div/div[3]/table/tbody/tr/td[4]/div/div/div/div[2]"
+            process_bar = WebDriverWait(driver=driver, timeout=300).until(
+                EC.element_to_be_clickable((By.XPATH, staus_xpth))
+            )
+            while process_bar.text != "100%":
+                print(process_bar.text)
+                sleep(5)
+        except TimeoutException:
+            size = getsize(file)
+            sleep(size / 300)
+            print("failed to get upload process bar, sleep " + str(size / 300))
 
         developer_name_xpath="/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[3]/div/div[2]/div/div[2]/div[1]/div[7]/div/div/input"
         developer_name_input = driver.find_element(by=By.XPATH, value=developer_name_xpath)
