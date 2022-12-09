@@ -192,6 +192,9 @@ class Appstore:
         upload = driver.find_element(by=By.XPATH, value=upload_xpath)
         upload.send_keys(file)
         press('enter')
+        press('enter')
+        press('enter')
+        press('enter')
         sleep(5)
         
         # begin upload
