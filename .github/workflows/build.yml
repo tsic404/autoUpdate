@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: install_depends
         run: |
-          sudo apt-get install python3-pip python3-venv python3-tk python3-dev xvfb xauth faketime fakeroot
+          sudo apt-get install python3-pip python3-venv python3-tk python3-dev xvfb xauth faketime fakeroot thunar
 
       - uses: actions/cache@v3
         with:

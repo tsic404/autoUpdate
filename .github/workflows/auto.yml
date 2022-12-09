@@ -29,7 +29,7 @@ jobs:
 
       - name: install_depends
         run: |
-          sudo apt-get install python3-pip python3-venv python3-wheel python3-tk python3-dev xvfb xauth thunar
+          sudo apt-get install python3-pip python3-venv python3-wheel python3-tk python3-dev xvfb xauth
           python3 -m venv venv
           source venv/bin/activate
           pip3 install wheel
