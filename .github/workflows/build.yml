@@ -33,6 +33,9 @@ jobs:
         - /etc/machine-id:/etc/machine-id
     runs-on: ubuntu-latest
     continue-on-error: true
+    defaults:
+      run:
+        shell: bash
     steps:
       - name: install_depends
         run: |
