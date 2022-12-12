@@ -36,12 +36,21 @@ jobs:
     steps:
       - name: install_depends
         run: |
-          sudo apt-get install python3-pip python3-venv python3-tk python3-dev xvfb xauth faketime fakeroot
+          apt update && apt dist-upgrade
+          apt-get install -y python3-pip python3-venv python3-tk python3-dev python3-wheel xvfb xauth faketime fakeroot wget unzip curl
 
       - uses: actions/cache@v3
         with:
           path: ${{ github.workspace }} 
           key: workspace
+      - name: setup chrome and chrome driver
+        run: |
+        export VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
+        wget https://chromedriver.storage.googleapis.com/${VERSION}/chromedriver_linux64.zip
+        unzip chromedriver_linux64.zip
+        mv chromedriver /usr/bin/
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        apt install -y ./google-chrome-stable_current_amd64.deb
 
       - name: download
         id: download
