@@ -16,6 +16,7 @@ binaryPacakge:
 
 debianInfo:
   debian_patched:
+    Depends: libdbus-glib-1-2
     Description: |
       Firefox Browser
       Get the browser that protects what\u2019s important.

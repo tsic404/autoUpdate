@@ -1,6 +1,6 @@
 #!/bin/env python3
 from pyvirtualdisplay import Display
-disp = Display(use_xauth=True)
+disp = Display(use_xauth=True, visible=False, size=(1920, 1080))
 disp.start()
 
 from sys import argv
