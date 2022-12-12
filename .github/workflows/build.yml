@@ -45,12 +45,12 @@ jobs:
           key: workspace
       - name: setup chrome and chrome driver
         run: |
-        export VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
-        wget https://chromedriver.storage.googleapis.com/${VERSION}/chromedriver_linux64.zip
-        unzip chromedriver_linux64.zip
-        mv chromedriver /usr/bin/
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        apt install -y ./google-chrome-stable_current_amd64.deb
+          export VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
+          wget https://chromedriver.storage.googleapis.com/${VERSION}/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          mv chromedriver /usr/bin/
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          apt install -y ./google-chrome-stable_current_amd64.deb
 
       - name: download
         id: download

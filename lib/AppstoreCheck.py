@@ -148,6 +148,10 @@ class Appstore:
 
         ops = webdriver.ChromeOptions()
         #ops.add_argument("--headless")
+        ops.add_argument('--disable-infobars')
+        ops.add_argument('--disable-dev-shm-usage')
+        ops.add_argument('--no-sandbox')
+        ops.add_argument('--remote-debugging-port=9222')
 
         login_url = "https://appstore-dev.uniontech.com/"
         driver = webdriver.Chrome(options=ops)
@@ -190,8 +194,6 @@ class Appstore:
 
         upload_xpath = "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[3]/div[2]/div/label/input"
         upload = driver.find_element(by=By.XPATH, value=upload_xpath)
-        print(file)
-        print(upload.text)
         upload.send_keys(file)
         press('enter')
         press('enter')
