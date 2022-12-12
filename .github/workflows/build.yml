@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: install_depends
         run: |
-          apt update && apt dist-upgrade
+          apt update && apt dist-upgrade -y
           apt-get install -y python3-pip python3-venv python3-tk python3-dev python3-wheel xvfb xauth faketime fakeroot wget unzip curl
 
       - uses: actions/cache@v3
