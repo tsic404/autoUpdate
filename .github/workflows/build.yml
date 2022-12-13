@@ -40,7 +40,7 @@ jobs:
       - name: install_depends
         run: |
           apt update && apt dist-upgrade -y
-          apt-get install -y python3-pip python3-venv python3-tk python3-dev python3-wheel xvfb xauth faketime fakeroot wget unzip curl
+          apt-get install -y python3-pip python3-venv python3-tk python3-dev python3-wheel xvfb xauth faketime fakeroot wget unzip curl coreutils
 
       - name: checkout
         uses: actions/checkout@v3
@@ -62,7 +62,6 @@ jobs:
           mv chromedriver /usr/bin/
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           apt install -y ./google-chrome-stable_current_amd64.deb
-          ln -sf /usr/bin /bin
 
       - name: download
         id: download
