@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 from os import popen
 def do_extra(app):
     appid = app.appid
