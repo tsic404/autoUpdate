@@ -2,6 +2,7 @@
 
 from shutil import copy
 from PIL import Image
+from os import remove
 
 from Utils import mkdirs
 
@@ -16,5 +17,5 @@ def do_extra(app):
         img = Image.open(content + '/pixmaps/com.visualstudio.code.png')
         img.thumbnail((i,i))
         img.save(icons_path + str(i) + 'x' + str(i) + '/apps/com.visualstudio.code.png', 'png')
+    remove(content + '/pixmaps/com.visualstudio.code.png')
         # copy(content + '/pixmaps/com.visualstudio.code.png', icons_path + i + 'x' + i + '/apps/com.visualstudio.code.png')
-
