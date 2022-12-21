@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+import os
+import sys
+
+def generate_depends(sos):
+    res = set()
+    for i in sos:
+        for j in os.popen('''dpkg -S lib/x86_64-linux-gnu/''' + i + ''' | awk -F ':amd64' '{print $1}' ''').readlines():
+            j = j.strip('\n')
+            res.add(j)
+    return {"Depends" : str(res).strip('{').strip('}').replace("'", '')}
+
+def get_extra_sos(path):
+    sos = set()
+    shell = "find {path} -name *.so*".format(path=path)
+    for i in os.popen(shell).readlines():
+        i = os.path.basename(i.strip('\n'))
+        sos.add(i)
+    return sos
+
+def main():
+    path = sys.argv[1]
+    sos = get_extra_sos(path=path)
+    depends = generate_depends(sos=sos)
+    print(str(depends).strip("{}").replace("'", ""))
+
+if __name__ == "__main__":
+    sys.exit(main())
