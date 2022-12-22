@@ -188,11 +188,11 @@ class Appstore:
         driver.get(upload_page_url)
         sleep(3)
 
-        update_button_xpath = "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[3]/div[1]/div[2]/div/div[3]/table/tbody/tr/td[9]/div/button[2]"
+        update_button_xpath = "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[4]/div[1]/div[2]/div/div[3]/table/tbody/tr/td[9]/div/button[2]"
         update_button = driver.find_element(by=By.XPATH, value=update_button_xpath)
         update_button.click()
 
-        upload_xpath = "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[3]/div[2]/div/label/input"
+        upload_xpath = "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[4]/div[1]/div[1]/div/label[2]/input"
         upload = driver.find_element(by=By.XPATH, value=upload_xpath)
         upload.send_keys(file)
         press('enter')
@@ -203,7 +203,7 @@ class Appstore:
         
         # begin upload
         try:
-            staus_xpth =  "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[3]/div[1]/div[2]/div/div[3]/table/tbody/tr/td[4]/div/div/div/div[2]"
+            staus_xpth =  "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[4]/div[1]/div[2]/div/div[3]/table/tbody/tr/td[4]/div/div/div/div[2]"
             process_bar = WebDriverWait(driver=driver, timeout=300).until(
                 EC.element_to_be_clickable((By.XPATH, staus_xpth))
             )
@@ -215,7 +215,7 @@ class Appstore:
             sleep(int(size / 350000))
             print("failed to get upload process bar, sleep " + str(int(size / 350000)))
 
-        developer_name_xpath="/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[3]/div/div[2]/div/div[2]/div[1]/div[7]/div/div/input"
+        developer_name_xpath="/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[3]/div/div[2]/div/div[2]/div/div[7]/div/div/input"
         developer_name_input = driver.find_element(by=By.XPATH, value=developer_name_xpath)
         developer_name_input.clear()
         developer_name_input.send_keys("开源社区中心")
