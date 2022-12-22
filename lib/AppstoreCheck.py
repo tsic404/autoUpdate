@@ -192,7 +192,7 @@ class Appstore:
         update_button = driver.find_element(by=By.XPATH, value=update_button_xpath)
         update_button.click()
 
-        upload_xpath = "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[4]/div[1]/div[1]/div/label[2]/input"
+        upload_xpath = "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[4]/div[2]/div/label/input"
         upload = driver.find_element(by=By.XPATH, value=upload_xpath)
         upload.send_keys(file)
         press('enter')
