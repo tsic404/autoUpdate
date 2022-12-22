@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+import sys
+import requests
+from re import search
+
+def main():
+    d_url = r"https://download.mozilla.org/\?product=thunderbird-(.*)-SSL&os=linux64&lang=zh-CN"
+    content = requests.get("https://www.thunderbird.net/zh-CN/").text
+    # print(content)
+    res = search(d_url, content)
+    ver = res.groups()[0]
+    url = "https://download-installer.cdn.mozilla.net/pub/thunderbird/releases/{ver}/"\
+            "linux-x86_64/en-US/thunderbird-{ver}.tar.bz2".replace("{ver}", ver)
+    print("X86", "1:" + ver, url)
+
+if __name__ == "__main__":
+    sys.exit(main())

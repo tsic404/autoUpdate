@@ -88,7 +88,7 @@ jobs:
           source venv/bin/activate
           for i in `ls hooks`
           do
-            ./hooks/$i "${{ inputs.appid }}" "${{ inputs.version }}" "${{ steps.package.outputs.PACKAGED }}"
+            ./hooks/$i "${{ inputs.appid }}" "${{ inputs.version }}" ${{ inputs.arch }} "${{ steps.package.outputs.PACKAGED }}"
           done
 
       - name: upload package

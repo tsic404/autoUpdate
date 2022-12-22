@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from pyvirtualdisplay import Display
-disp = Display(use_xauth=True, visible=False, size=(1920, 1080))
-disp.start()
+# disp = Display(use_xauth=True, visible=False, size=(1920, 1080))
+# disp.start()
 
 from sys import argv
 from os import environ
@@ -11,12 +11,13 @@ from requests import post
 
 appid = argv[1]
 version = argv[2]
-packagedFile = argv[3]
+arch = argv[3]
+packagedFile = argv[4]
 feedback_url = environ['COOPERATION_URL']
 
 appstore = Appstore(environ['APPUSERNAME'], environ['APPPASSWORD'])
 conf = get_conf("apps/" + appid + "/info.yml")
-appstore.uploadUpdate(appid=conf.get("id"), file=packagedFile)
+appstore.uploadUpdate(appid=conf.get("id"), arch=arch, file=packagedFile)
 _, _, ver = appstore.getVersion(appid=conf.get("id"))
 if ver.__eq__(version):
     data = appstore.search(appid=conf.get("id"))
@@ -27,4 +28,4 @@ if ver.__eq__(version):
             "systemStr": appstore.get_all_systemStr(conf.get("id")),
             "appid": conf.get("id")
         })
-disp.stop()
+# disp.stop()
