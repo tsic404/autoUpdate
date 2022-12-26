@@ -13,6 +13,8 @@ binaryPacakge:
       icons:
         path:
           - /usr/share/icons
+        fix:
+          - icons_fix
 
 debianInfo:
   debian_patched:
