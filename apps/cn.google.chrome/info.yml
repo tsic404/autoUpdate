@@ -6,6 +6,8 @@ binaryPacakge:
     type: deb
     content: 
       path: /opt/google/chrome/
+      fix:
+          - permission_fix
     entries: 
       applications:
         path:
