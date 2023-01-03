@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+from re import search
+from requests import get
+
+def check():
+    url = "https://u.tools/"
+    res = get(url).text
+    publish_url = "https://publish.u-tools.cn/version2/"
+    res = search(r'utools_(.*)_amd64.deb',res)
+    print("X86", res.groups()[0], publish_url + res.group())
+    # return publish_url + deb, ver
+
+if __name__ == "__main__":
+    check()

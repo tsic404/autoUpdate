@@ -1,0 +1,17 @@
+appid: u.utools.utools
+id: 1001057
+
+binaryPacakge:
+  build:
+    type: deb
+    content: 
+      path: /opt/uTools/
+    entries: 
+      applications:
+        path:
+          - /usr/share/applications/
+        fix:
+          - exec_fix
+      icons:
+        path:
+          - /usr/share/icons
