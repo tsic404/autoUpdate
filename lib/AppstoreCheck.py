@@ -98,7 +98,7 @@ class Appstore:
         res = get(url=detail_url, headers=headers, cookies=self.cookies).json()
         return res.get("datas", {})
     
-    def __getappUpdateButton(self, appid, arch):
+    def __getappUpdateButton(self, appid, arch, systemStr):
         #"/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[4]/div[1]/div[2]/div/div[3]/table/tbody/tr/td[9]/div/button[2]"
         #"/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[4]/div[1]/div[2]/div/div[3]/table/tbody/tr[3]/td[9]/div/button[2]"
         self.__check()
@@ -106,7 +106,8 @@ class Appstore:
         appDetial = self.__getappDetial(id=app_info['id'])
         count = 1
         for pkg in appDetial.get("app_origin_pkgs"):
-            if pkg['pkgArch'].__eq__(arch):
+            systems = pkg['systemStr'].split(',')
+            if pkg['pkgArch'].__eq__(arch) and systems.__contains__(systemStr):
                 break
             count +=1
         if count == 1:
@@ -114,10 +115,9 @@ class Appstore:
         else:
             return "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[4]/div[1]/div[2]/div/div[3]/table/tbody/tr[" + str(count) + "]/td[9]/div/button[2]"
 
-    def get_all_systemStr(self, app_id: str):
+    def get_all_systemStr(self, app_id: str, systemStr: str):
         self.__check()
         app_info = self.__search(appid=app_id)
-        commnuitySystemStr = "社区版"
         allSystemStr = "0"
         detail_url = "https://appstore-dev.uniontech.com/devprod-api/store-dev-app/app/{id}/detail".format(id=app_info['id'])
         res = get(url=detail_url, headers=headers, cookies=self.cookies).json()
@@ -126,7 +126,7 @@ class Appstore:
             count = 0
             for i in orin_pks:
                 count +=1
-                if commnuitySystemStr in i['systemStr'] or allSystemStr in i['supSys']:
+                if systemStr in i['systemStr'] or allSystemStr in i['supSys']:
                     return str(i['systemStr']).strip('[]')
     
     def getVersion(self, appid: str, systemStr: str = "社区版", arch: str = "X86"):
@@ -152,7 +152,7 @@ class Appstore:
         res = run(["dpkg", "--compare-versions", newVer, "gt", oldVer])
         return res.returncode == 0
 
-    def uploadUpdate(self, appid: str, arch: str, file: str):
+    def uploadUpdate(self, appid: str, arch: str, file: str, systemStr = "社区版"):
 
         ops = webdriver.ChromeOptions()
         #ops.add_argument("--headless")
@@ -196,7 +196,7 @@ class Appstore:
         driver.get(upload_page_url)
         sleep(3)
         
-        update_button_xpath = self.__getappUpdateButton(appid=appid, arch=arch)
+        update_button_xpath = self.__getappUpdateButton(appid=appid, arch=arch, systemStr=systemStr)
         print(update_button_xpath)
         update_button = driver.find_element(by=By.XPATH, value=update_button_xpath)
         update_button.click()
