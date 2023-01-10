@@ -115,7 +115,7 @@ class Appstore:
         else:
             return "/html/body/div[2]/div/div/div[2]/section/div/div[2]/div[2]/form/div[1]/div/div/div[2]/div/div[4]/div[1]/div[2]/div/div[3]/table/tbody/tr[" + str(count) + "]/td[9]/div/button[2]"
 
-    def get_all_systemStr(self, app_id: str, systemStr: str):
+    def get_all_systemStr(self, app_id: str, systemStr: str = "社区版"):
         self.__check()
         app_info = self.__search(appid=app_id)
         allSystemStr = "0"
