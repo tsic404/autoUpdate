@@ -144,6 +144,8 @@ class BinaryPackage:
                         if do_extra:
                             with run_in(self.package_path):
                                 do_extra(self)
+            #
+            popen("find -type f | grep chrome-sandbox | xargs -I {} chmod 4755 {}").read()
 
     def set_entries(self):
         content = self.build.get("content")

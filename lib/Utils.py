@@ -384,17 +384,8 @@ class Extract:
         shell_options = "dpkg-deb -R " + file + " " + extract_path
         popen(shell_options).read()
         return extract_path
-    
-    def __appimage_openshot_extract(self, file, extract_path):
-        shell = "sudo mount " + file + " /mnt -o uid={UID},gid={GID}".format(UID=os.getuid(),GID=os.getgid())
-        popen(shell).read()
-        copytree("/mnt", extract_path)
-        popen("sudo umount /mnt")
-        return extract_path
 
     def extract_appimage(self, file: str, extract_path):
-        if file.__contains__("OpenShot"):
-            return self.__appimage_openshot_extract(file=file, extract_path=extract_path)
         shell_options = "--appimage-extract"
         mode = oct(stat(file).st_mode)[-3:]
         for i in mode:

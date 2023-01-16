@@ -6,8 +6,6 @@ binaryPacakge:
     type: binary
     content: 
       path: /
-      fix:
-        - permission_fix
     entries: 
       applications:
         fix:
