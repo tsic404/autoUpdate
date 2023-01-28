@@ -47,6 +47,7 @@ jobs:
         run: |
           useradd -m tsic -s /bin/bash
           echo "tsic ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/tsic
+          mkdir ${{ github.workspace }}
           chown -R tsic:tsic ${{ github.workspace }}
 
       - name: checkout
