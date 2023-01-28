@@ -45,7 +45,7 @@ jobs:
       
       - name: create non root user
         run: |
-          useradd -m tsic -s bash
+          useradd -m tsic -s /bin/bash
           echo "tsic ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/tsic
           chown -R tsic:tsic ${{ github.workspace }}
 
