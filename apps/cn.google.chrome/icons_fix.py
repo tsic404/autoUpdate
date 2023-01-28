@@ -1,7 +1,6 @@
 from os import makedirs
 from shutil import copy
 
-
 def do_extra(app):
     appid = app.appid
     content = 'opt/apps/' + appid + '/files/'
