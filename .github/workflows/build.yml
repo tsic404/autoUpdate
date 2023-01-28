@@ -18,6 +18,7 @@ on:
       hook:
         default: false
         type: boolean
+
 env:
   APPUSERNAME: ${{ secrets.APP_DEV_USERNAME }}
   APPPASSWORD: ${{ secrets.APP_DEV_PASSWORD }}
@@ -40,7 +41,13 @@ jobs:
       - name: install_depends
         run: |
           apt update && apt dist-upgrade -y
-          apt-get install -y python3-pip python3-venv python3-tk python3-dev python3-wheel xvfb xauth faketime fakeroot wget unzip curl coreutils
+          apt-get install -y python3-pip python3-venv python3-tk python3-dev python3-wheel xvfb xauth faketime fakeroot wget unzip curl coreutils sudo bash
+      
+      - name: create non root user
+        run: |
+          useradd -m tsic -s bash
+          echo "tsic ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/tsic
+          chown -R tsic:tsic ${{ github.workspace }}
 
       - name: checkout
         uses: actions/checkout@v3
@@ -49,6 +56,7 @@ jobs:
 
       - name: install_depends
         run: |
+          su tsic
           python3 -m venv venv
           source venv/bin/activate
           pip3 install wheel
@@ -56,16 +64,18 @@ jobs:
 
       - name: setup chrome and chrome driver
         run: |
+          su tsic
           export VERSION=`curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
           wget https://chromedriver.storage.googleapis.com/${VERSION}/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip
-          mv chromedriver /usr/bin/
+          sudo mv chromedriver /usr/bin/
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          apt install -y ./google-chrome-stable_current_amd64.deb
+          sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
       - name: download
         id: download
         run: |
+          su tsic
           source venv/bin/activate
           wget ${{ inputs.url }}
           python3 scripts/download "${{ inputs.url }}"
@@ -73,18 +83,21 @@ jobs:
       - name: extract
         id: extract
         run: |
+          su tsic
           source venv/bin/activate
           python3 scripts/extract "${{ steps.download.outputs.FILE }}"
 
       - name: package
         id: package
         run: |
+          su tsic
           source venv/bin/activate
           ./apps/${{ inputs.appid }}/package.${{ inputs.arch }} "${{ steps.extract.outputs.EXTRACTED }}" "${{ inputs.version }}"
 
       - name: call hooks
         if: ${{ inputs.hook }}
         run: |
+          su tsic
           source venv/bin/activate
           for i in `ls hooks`
           do
