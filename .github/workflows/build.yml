@@ -96,7 +96,7 @@ jobs:
           find -type f | grep chrome-sandbox | xargs -I {} chmod 4755 {}
           find -type f | grep chrome-sandbox | xargs -I {} ls -l {}
           ./apps/${{ inputs.appid }}/package.${{ inputs.arch }} "${{ steps.extract.outputs.EXTRACTED }}" "${{ inputs.version }}"
-
+          dpkg -c "${{ steps.package.outputs.PACKAGED }}"
 
       - name: call hooks
         if: ${{ inputs.hook }}
