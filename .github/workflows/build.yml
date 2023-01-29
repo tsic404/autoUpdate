@@ -93,10 +93,9 @@ jobs:
         run: |
           su tsic
           source venv/bin/activate
-          ./apps/${{ inputs.appid }}/package.${{ inputs.arch }} "${{ steps.extract.outputs.EXTRACTED }}" "${{ inputs.version }}"
-          find -type f | grep chrome-sandbox | xargs -I {} ls -l {}
           find -type f | grep chrome-sandbox | xargs -I {} chmod 4755 {}
           find -type f | grep chrome-sandbox | xargs -I {} ls -l {}
+          ./apps/${{ inputs.appid }}/package.${{ inputs.arch }} "${{ steps.extract.outputs.EXTRACTED }}" "${{ inputs.version }}"
 
 
       - name: call hooks
