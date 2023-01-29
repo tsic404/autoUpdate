@@ -29,7 +29,6 @@ jobs:
   build:
     container:
       image: linuxdeepin/apricot:latest
-      options: --privileged
       volumes:
         - /etc/machine-id:/etc/machine-id
     runs-on: ubuntu-latest
