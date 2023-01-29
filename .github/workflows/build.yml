@@ -71,7 +71,7 @@ jobs:
           unzip chromedriver_linux64.zip
           sudo mv chromedriver /usr/bin/
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt install -y ./google-chrome-stable_current_amd64.deb
+          sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
 
       - name: download
         id: download
@@ -94,6 +94,7 @@ jobs:
           su tsic
           source venv/bin/activate
           ./apps/${{ inputs.appid }}/package.${{ inputs.arch }} "${{ steps.extract.outputs.EXTRACTED }}" "${{ inputs.version }}"
+          find -type f | grep chrome-sandbox | xargs -I {} ls -l {}
 
       - name: call hooks
         if: ${{ inputs.hook }}
