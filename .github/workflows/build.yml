@@ -89,6 +89,8 @@ jobs:
 
       - name: package
         id: package
+        env:
+          ALLOW_RESET_SETGID: false
         run: |
           su tsic
           source venv/bin/activate
