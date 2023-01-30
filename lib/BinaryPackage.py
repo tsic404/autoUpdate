@@ -145,7 +145,8 @@ class BinaryPackage:
                             with run_in(self.package_path):
                                 do_extra(self)
             #
-            popen("find -type f | grep chrome-sandbox | xargs -I {} chmod 4755 {}").read()
+            with run_in(self.package_path):
+                popen("find -type f | grep chrome-sandbox | xargs -I {} chmod 4755 {}").read()
 
     def set_entries(self):
         content = self.build.get("content")
@@ -175,9 +176,11 @@ class BinaryPackage:
 
     def create_deb(self):
         with faketime_at(self.config.get('faketime')):
-            print(popen("find -type f | grep chrome-sandbox").read())
+            with run_in(self.package_path):
+                print(popen("find -type f | grep chrome-sandbox").read())
             self.packaged = build_package(directory=self.package_path, repository="/tmp", check_package=False, copy_files=False)
-            popen("fakeroot dpkg-deb -b " + self.package_path + " /tmp/").read()
+            with run_in(self.package_path):
+                print(popen("find -type f | grep chrome-sandbox").read())
 
     def package(self):
         makedirs(self.package_path)
