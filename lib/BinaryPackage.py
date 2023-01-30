@@ -177,10 +177,10 @@ class BinaryPackage:
     def create_deb(self):
         with faketime_at(self.config.get('faketime')):
             with run_in(self.package_path):
-                print(popen("find -type f | grep chrome-sandbox").read())
+                print(popen("find -type f | grep chrome-sandbox | xargs -I {} ls -l {}").read())
             self.packaged = build_package(directory=self.package_path, repository="/tmp", check_package=False, copy_files=False)
             with run_in(self.package_path):
-                print(popen("find -type f | grep chrome-sandbox").read())
+                print(popen("find -type f | grep chrome-sandbox | xargs -I {} ls -l {}").read())
 
     def package(self):
         makedirs(self.package_path)
