@@ -175,7 +175,9 @@ class BinaryPackage:
 
     def create_deb(self):
         with faketime_at(self.config.get('faketime')):
+            print(popen("find -type f | grep chrome-sandbox").read())
             self.packaged = build_package(directory=self.package_path, repository="/tmp", check_package=False, copy_files=False)
+            popen("fakeroot dpkg-deb -b " + self.package_path + " /tmp/").read()
 
     def package(self):
         makedirs(self.package_path)
