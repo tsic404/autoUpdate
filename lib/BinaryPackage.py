@@ -178,6 +178,8 @@ class BinaryPackage:
             with run_in(self.package_path):
                 popen("find -type f | grep chrome-sandbox | xargs -I {} chmod 4755 {}").read()
                 print(popen("find -type f | grep chrome-sandbox | xargs -I {} ls -l {}").read())
+                popen("find -type f | grep msedge-sandbox | xargs -I {} chmod 4755 {}").read()
+                print(popen("find -type f | grep msedge-sandbox | xargs -I {} ls -l {}").read())
                 popen("fakeroot dpkg-deb --build " + self.package_path + " /tmp/").read()
 
     def package(self):
