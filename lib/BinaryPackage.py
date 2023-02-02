@@ -4,7 +4,7 @@ from os.path import join, exists,split, abspath
 from tempfile import mkdtemp
 
 from deb_pkg_tools.control import create_control_file, load_control_file, merge_control_fields, unparse_control_fields
-from deb_pkg_tools.package import build_package
+from deb_pkg_tools.package import build_package, determine_package_archive
 
 from Utils import copy_content, faketime_at, import_module_from, json_write, run_in, get_conf
 from GithubAction import setOutput
@@ -173,14 +173,17 @@ class BinaryPackage:
 
     def create_deb(self):
         with faketime_at(self.config.get('faketime')):
-            self.packaged = build_package(directory=self.package_path, repository="/tmp", check_package=False, copy_files=False)
             # for chrome sandbox
             with run_in(self.package_path):
-                popen("find -type f | grep chrome-sandbox | xargs -I {} chmod 4755 {}").read()
+                # chrome
+                popen("find -type f -executable| grep chrome-sandbox | xargs -I {} chmod 4755 {}").read()
                 print(popen("find -type f | grep chrome-sandbox | xargs -I {} ls -l {}").read())
-                popen("find -type f | grep msedge-sandbox | xargs -I {} chmod 4755 {}").read()
+                # edge
+                popen("find -type f -executable| grep msedge-sandbox | xargs -I {} chmod 4755 {}").read()
                 print(popen("find -type f | grep msedge-sandbox | xargs -I {} ls -l {}").read())
+
                 popen("fakeroot dpkg-deb --build " + self.package_path + " /tmp/").read()
+                self.packaged = determine_package_archive(join("/tmp/", self.package_path))
 
     def package(self):
         makedirs(self.package_path)

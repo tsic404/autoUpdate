@@ -17,6 +17,7 @@ if not exists("testbuild"):
 chdir("testbuild")
 
 for res in popen("../apps/" + APPNAME + "/check").read().strip('\n').split('\n'):
+    print(res)
     arch, ver, url = res.strip('\n').split(' ')
     file = Downloader().run(url)
     extraced_dir = Extract().extract(file)
