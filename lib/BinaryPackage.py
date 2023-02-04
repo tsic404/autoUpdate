@@ -183,7 +183,7 @@ class BinaryPackage:
                 print(popen("find -type f | grep msedge-sandbox | xargs -I {} ls -l {}").read())
 
                 popen("fakeroot dpkg-deb --build " + self.package_path + " /tmp/").read()
-                self.packaged = determine_package_archive(join("/tmp/", self.package_path))
+                self.packaged = join("/tmp/", determine_package_archive(self.package_path))
 
     def package(self):
         makedirs(self.package_path)
