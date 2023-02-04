@@ -14,8 +14,8 @@ def do_extra(app):
     icons = [512,256,128,64,32,16]
     for i in icons:
         mkdirs(icons_path + str(i) + 'x' + str(i) + '/apps/')
-        img = Image.open(content + '/pixmaps/com.visualstudio.code.png')
+        img = Image.open(content + '/pixmaps/vscode.png')
         img.thumbnail((i,i))
         img.save(icons_path + str(i) + 'x' + str(i) + '/apps/com.visualstudio.code.png', 'png')
-    remove(content + '/pixmaps/com.visualstudio.code.png')
+    remove(content + '/pixmaps/vscode.png')
         # copy(content + '/pixmaps/com.visualstudio.code.png', icons_path + i + 'x' + i + '/apps/com.visualstudio.code.png')
