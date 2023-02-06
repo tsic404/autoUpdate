@@ -16,6 +16,6 @@ def do_extra(app):
         mkdirs(icons_path + str(i) + 'x' + str(i) + '/apps/')
         img = Image.open(content + '/pixmaps/vscode.png')
         img.thumbnail((i,i))
-        img.save(icons_path + str(i) + 'x' + str(i) + '/apps/com.visualstudio.code.png', 'png')
+        img.save(icons_path + str(i) + 'x' + str(i) + '/apps/vscode.png', 'png')
     remove(content + '/pixmaps/vscode.png')
         # copy(content + '/pixmaps/com.visualstudio.code.png', icons_path + i + 'x' + i + '/apps/com.visualstudio.code.png')
