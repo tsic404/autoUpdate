@@ -1,0 +1,26 @@
+appid: org.debian.kitty
+id: 1070488
+
+binaryPacakge:
+  build:
+    type: binary
+    content:
+      path: /
+    entries:
+      applications:
+        path:
+          - /share/applications/
+        fix:
+          - exec_fix
+      icons:
+        path:
+          - /share/icons/
+
+debianInfo:
+    debian_patched:
+        Description: |
+          kitty - the fast, feature-rich, cross-platform, GPU based terminal
+          Kitty supports modern terminal features like: graphics, unicode, true-color,
+          OpenType ligatures, mouse protocol, focus tracking, and bracketed paste. 
+          Kitty has a framework for "kittens", small terminal programs that can be
+          used to extend its functionality. 

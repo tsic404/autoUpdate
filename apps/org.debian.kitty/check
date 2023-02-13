@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+import sys
+from GithubCheck import check
+
+github = {
+    'author': "kovidgoyal",
+    'project': "kitty",
+    "suffix": "x86_64.txz",
+    "prefix": ""
+}
+
+if __name__ == "__main__":
+    sys.exit(check(github, "X86"))
